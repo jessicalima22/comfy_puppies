@@ -1,0 +1,16 @@
+
+<div class="container">
+<h1>Add NEW Animal</h1>
+  <%= simple_form_for (@animal) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :breed %>
+    <%= f.input :size %>
+    <%= f.input :gender %>
+    <%= f.input :age %>
+    <%= f.input :castrated %>
+    <%= f.input :vaccinated %>
+    <%= f.input :dewormed %>
+    <%= f.input :special_needed %>
+    <%= f.submit class: 'btn btn-primary' %>
+  <% end %>
+</div>
