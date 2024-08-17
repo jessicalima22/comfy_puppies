@@ -1,1 +1,6 @@
 <h1>See List of Animals</h1>
+<ul>
+  <%= @animals.each do |animal| %>
+    <li><%= animal.name %></li>
+  <% end %>
+</ul>
