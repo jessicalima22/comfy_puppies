@@ -1,1 +1,13 @@
-// Specific CSS for your home-page
+.banner-1 {
+  background-color: $amarelo-comfy;
+}
+
+.content-carousel {
+  display: flex;
+  justify-content: space-between;
+}
+
+.img-carousel {
+  width: 25%;
+ 
+}
