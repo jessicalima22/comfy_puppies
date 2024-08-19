@@ -1,6 +1,9 @@
 .banner-1 {
   background-color: $amarelo-comfy;
   padding: 2% 15%;
+  @media (min-width: $breakpoint-tablet) {
+    padding: 5% 15%;
+  }
 }
 
 .content-carousel {
@@ -60,4 +63,27 @@
       width: 2rem;
       height: 2rem;
     }
+}
+
+h1.title-carousel {
+  font-weight: 500;
+  @media (min-width: $breakpoint-tablet) {
+    font-weight: 500;
+    font-size: 2rem;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    font-weight: 500;
+    font-size: 3rem;
+  }
+}
+
+p.text-carousel {
+  @media (min-width: $breakpoint-tablet) {
+    padding-top: 6%;
+    font-size: 1.2rem;
+  }
+  @media (min-width: $breakpoint-desktop) {
+    font-size: 1.8rem;
+  }
 }
