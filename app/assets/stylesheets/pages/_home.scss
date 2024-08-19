@@ -1,5 +1,6 @@
 .banner-1 {
   background-color: $amarelo-comfy;
+  padding: 2% 15%;
 }
 
 .content-carousel {
@@ -8,6 +9,55 @@
 }
 
 .img-carousel {
-  width: 25%;
- 
+  width: 50%;
+}
+
+
+.title-carousel, .text-carousel{
+  color: white;
+}
+
+.carousel-indicators [data-bs-target]  {
+  width: 5%;
+
+
+  @media (min-width: $breakpoint-tablet) {
+    width: 7%;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    width: 10%;
+    margin-right: 2%;
+  }
+}
+
+.carousel-indicators {
+  margin-bottom: 0;
+
+  @media (min-width: $breakpoint-tablet) {
+    margin-bottom: 1rem;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    margin-bottom: 1.2rem;
+  }
+}
+
+.carousel-control-prev-icon {
+  background-image: url('back-arrow.png');
+
+}
+
+.carousel-control-next-icon {
+  background-image: url('caret-right.png')
+}
+
+.carousel-control-next-icon, .carousel-control-prev-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+
+    @media (min-width: $breakpoint-tablet) {
+      width: 2rem;
+      height: 2rem;
+    }
 }
