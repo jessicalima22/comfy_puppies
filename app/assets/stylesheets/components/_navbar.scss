@@ -30,26 +30,39 @@
   z-index: 1000;
   backdrop-filter: blur(10px);
   padding: 0;
-  //height: 5%;
+  height: 5.5%;
 }
 
 button.navbar-toggler {
   padding: 0.15rem 0.3rem;
 }
 
+//breakpoint avatar
+@media (min-width: 576px) {
+  .container-fluid {
+    padding-top: 2px;
+  }
+}
 
 //breakpoint tablet
-
 @media (min-width: $breakpoint-tablet) {
   .navbar.navbar-expand-sm.navbar-light.navbar-lewagon {
-  //padding: 15px 0;
+    height: auto;
   }
 
+  a.nav-link {
+    padding-top: 0.7rem;
+  }
   .navbar-lewagon .navbar-brand img, img.avatar {
     width: 40px; //default
   }
+
   button.navbar-toggler {
     padding: var(--bs-navbar-toggler-padding-y) var(--bs-navbar-toggler-padding-x);
+  }
+
+  .container-fluid{
+    padding-top: 0;
   }
 
 }
