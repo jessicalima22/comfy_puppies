@@ -79,9 +79,11 @@ h1.title-carousel {
 }
 
 p.text-carousel {
+  min-height: 30%;
   @media (min-width: $breakpoint-tablet) {
     padding-top: 6%;
     font-size: 1.2rem;
+    min-height: 40%;
   }
   @media (min-width: $breakpoint-desktop) {
     font-size: 1.8rem;
