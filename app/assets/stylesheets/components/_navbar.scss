@@ -30,7 +30,7 @@
   z-index: 1000;
   backdrop-filter: blur(10px);
   padding: 0;
-  height: 5.5%;
+  height: 42px;
 }
 
 button.navbar-toggler {
@@ -52,6 +52,7 @@ button.navbar-toggler {
 
   a.nav-link {
     padding-top: 0.7rem;
+    font-size: 1rem;
   }
   .navbar-lewagon .navbar-brand img, img.avatar {
     width: 40px; //default
@@ -63,5 +64,11 @@ button.navbar-toggler {
 
   .container-fluid{
     padding-top: 0;
+  }
+}
+
+@media (min-width: $breakpoint-desktop) {
+  .navbar.navbar-expand-sm.navbar-light.navbar-lewagon {
+    height: 60px;
   }
 }
