@@ -33,14 +33,41 @@
   height: 42px;
 }
 
-button.navbar-toggler {
-  padding: 0.15rem 0.3rem;
+a.nav-link {
+  font-weight: 500;
+  color: #72190D;
 }
+
+// button.navbar-toggler {
+//   padding: 0.15rem 0.3rem;
+//   color: red;
+// }
+
+// button.navbar-toggler.collapsed {
+//   color:aqua;
+//   outline-width: 25px;
+// }
+
+// button.navbar-toggler.collapsed:focus {
+//   outline: 2px solid #333333; /* Contorno personalizado */
+//   outline-offset: 25px;
+// }
 
 //breakpoint avatar
 @media (min-width: 576px) {
   .container-fluid {
     padding-top: 2px;
+  }
+}
+
+@media (max-width: 575px) {
+  ul.navbar-nav.me-auto {
+    align-items: center;
+    background-color: rgba(245, 245, 220, 0.619);
+    width: 90px;
+    position: absolute;
+    right: 5px;
+    border-radius: 0 0 5px 5px;
   }
 }
 
