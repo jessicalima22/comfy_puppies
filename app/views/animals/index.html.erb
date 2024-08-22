@@ -1,6 +1,8 @@
-<h1>See List of Animals</h1>
+<h1>Animals available for adoption</h1>
 <ul>
   <% @animals.each do |animal| %>
-    <li><%= animal.name %></li>
+    <h3><%= link_to animal.name, animal_path(animal) %></h3>
+    <p>Breed: <%= animal.breed %></p>
+    <p>Age: <%= animal.age %> anos</p>
   <% end %>
 </ul>

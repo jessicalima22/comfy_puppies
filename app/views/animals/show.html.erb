@@ -1,10 +1,14 @@
 <div class="container">
   <h1>Detalhes do Animal</h1>
-  <h2><%= @animal.name %></h2>
-  <p><%= @animal.breed %></p>
-  <p><%= @animal.size %></p>
-  <p><%= @animal.gender %></p>
-  <p><%= @animal.age %></p>
-  <%= link_to "Delete", animal_path(@animal),
+  <h2>Name: <%= @animal.name %></h2>
+  <p>Breed: <%= @animal.breed %></p>
+  <p>Size: <%= @animal.size %></p>
+  <p>Gender: <%= @animal.gender %></p>
+  <p>Age: <%= @animal.age %></p>
+  <%= link_to "Delete", animal_path(@animal), class: "btn btn-danger",
   data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+  <br>
+  <%= link_to 'Editar', edit_animal_path(@animal) %> |
+  <%= link_to 'Adotar', new_adoption_path(animal_id: @animal) %> |
+  <%= link_to 'Voltar', animals_path %>
 </div>
