@@ -2,8 +2,16 @@ class AnimalsController < ApplicationController
   before_action :set_animal, only: [:show, :edit, :update, :destroy]
   def index
     @animals = Animal.all
+    @animals = @animals.where("breed ILIKE ?", "%#{params[:breed]}%") if params[:breed].present?
+    @animals = @animals.where(size: params[:size]) if params[:size].present?
+    @animals = @animals.where(gender: params[:gender]) if params[:gender].present?
+    @animals = @animals.where(age: params[:age]) if params[:age].present?
+    @animals = @animals.where(castrated: params[:castrated]) if params[:castrated].present?
+    @animals = @animals.where(vaccinated: params[:vaccinated]) if params[:vaccinated].present?
+    @animals = @animals.where(dewormed: params[:dewormed]) if params[:dewormed].present?
+    @animals = @animals.where("special_needed ILIKE ?", "%#{params[:special_needed]}%") if params[:special_needed].present?
+    @animals = @animals.where("location ILIKE ?", "%#{params[:location]}%") if params[:location].present?
   end
-
   def show
   end
 
