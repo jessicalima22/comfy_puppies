@@ -1,0 +1,108 @@
+/* Mobile Adaptation */
+.signup-container {
+  display: flex;
+  height: 100vh;
+  flex-direction: column; /* Stack elements vertically on mobile */
+}
+
+.signup-form {
+  width: 100%; /* Full width on mobile */
+  height: 100%;
+  padding: 5% 10%;
+  background-color: #28A7BF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.signup-title {
+  margin-top: 0;
+  margin-bottom: 2rem;
+  font-family: sans-serif;
+  color: #72190D;
+  font-weight: 600;
+  line-height: 1.2;
+  text-align: center; /* Center the title */
+}
+
+.form-box {
+  width: 100%;
+  max-width: 400px;
+  padding: 2rem;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.signup-image {
+  width: 50%;
+  background-color: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+
+.signup-image img {
+  width: 100%;
+  max-height: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* WEB Adaptation */
+@media (min-width: $breakpoint-tablet) {
+
+  .signup-container {
+    flex-direction: row; /* Display elements side by side on larger screens */
+  }
+
+  .signup-form {
+    width: 50%;
+  }
+
+  .signup-title {
+    margin-top: 0;
+    margin-bottom: 2rem;
+    font-family: sans-serif;
+    color: #72190D;
+    font-weight: 600;
+    line-height: 1.2;
+    text-align: center; /* Center the title */
+  }
+
+  .signup-image {
+    width: 50%;
+    display: flex; /* Show image on larger screens */
+    align-items: center;
+    justify-content: center;
+  }
+
+  .signup-image img {
+    width: 100%;
+    max-height: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+}
+
+/* Button Styling */
+.btn-login {
+  background-color: #72190D;
+  color: white;
+  width: 100%; /* Full width button */
+  height: 45px;
+  font-family: sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.btn-signup:hover {
+  background-color: #65190f;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}

@@ -1,0 +1,60 @@
+@import "breakpoints";
+
+.button {
+  background-color: #72190D;
+  color: white;
+  width: 63px;
+  height: 28px;
+  font-family: $headers-font;
+  font-size: 0.5rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.btn-login {
+  background-color: #72190D;
+  color: white;
+  width: 100%; /* Make the button take the full width of its container */
+  margin-bottom: 5%;
+  height: 36px;
+  font-family: $headers-font;
+  font-size: 0.85rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  text-align: center;
+}
+
+@keyframes pulse {
+  0% {
+      transform: scale(1);
+  }
+  50% {
+      transform: scale(1.05);
+  }
+  100% {
+      transform: scale(1);
+  }
+}
+
+.button.pulse:hover {
+  animation: pulse 0.6s ease-in-out infinite;
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px #ff634780;
+  background-color: #65190f;
+}
+
+//tablet adaptation
+@media (min-width: $breakpoint-tablet) {
+  .button {
+    font-size: 1rem;
+    width: 140px;
+    height: 55px;
+    border-radius: 15px;
+  }
+}

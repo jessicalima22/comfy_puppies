@@ -1,1 +1,106 @@
-// Specific CSS for your home-page
+
+.banner-1 {
+  background-color: $amarelo-comfy;
+  padding: calc(42px + 3%) 15% 2% 15%;
+}
+
+.content-carousel {
+  display: flex;
+  justify-content: space-between;
+}
+
+.img-carousel {
+  width: 50%;
+}
+
+.title-carousel, .text-carousel{
+  color: white;
+}
+
+.carousel-indicators [data-bs-target]  {
+  width: 5%;
+}
+
+.carousel-indicators {
+  margin-bottom: 0;
+}
+
+.carousel-control-prev-icon {
+  background-image: url('back-arrow.png');
+
+}
+
+.carousel-control-next-icon {
+  background-image: url('caret-right.png')
+}
+
+.carousel-control-next-icon, .carousel-control-prev-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+h1.title-carousel {
+  font-weight: 500;
+}
+
+p.text-carousel {
+  min-height: 30%;
+}
+
+//breakpoint tablet
+
+@media (min-width: $breakpoint-tablet) {
+  .banner-1 {
+    padding: 5% 15%;
+  }
+
+  .carousel-indicators [data-bs-target]  {
+    width: 7%;
+  }
+
+  .carousel-indicators {
+    margin-bottom: 1rem;
+  }
+
+  .carousel-control-next-icon, .carousel-control-prev-icon {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  h1.title-carousel {
+    font-weight: 500;
+    font-size: 2rem;
+  }
+
+  p.text-carousel {
+    padding-top: 6%;
+    font-size: 1.2rem;
+    min-height: 40%;
+  }
+
+  .banner-1 {
+    padding: calc(52px + 3%) 15% 2% 15%;
+  }
+}
+
+//breakpoint desktop
+
+@media (min-width: $breakpoint-desktop) {
+  .carousel-indicators [data-bs-target]  {
+    width: 10%;
+    margin-right: 2%;
+  }
+
+  .carousel-indicators {
+    margin-bottom: 1.2rem;
+  }
+
+  h1.title-carousel {
+    font-weight: 500;
+    font-size: 3rem;
+  }
+
+  p.text-carousel {
+    font-size: 1.8rem;
+  }
+}

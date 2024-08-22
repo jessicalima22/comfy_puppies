@@ -1,2 +1,60 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+
+<div class="main">
+  <%# <div class="container banner-1">
+
+    <%= image_tag 'gato-roupa-xadrez.png', alt: 'Cat with plaid outfit' %>
+
+
+  <%# <div data-controller="carousel" data-carousel-interval-value="5000">
+    <div data-carousel-target="slide" class="container banner-1">
+      <h1>Your best friend awaits for you!</h1>
+      <p>Adopt you best company!</p>
+      <%= image_tag 'gato-roupa-xadrez.png', alt: 'Cat with plaid outfit' %>
+    <%# </div>
+    <div data-carousel-target="slide">Slide 2</div>
+    <div data-carousel-target="slide">Slide 3</div> %>
+
+    <%# <button data-action="carousel#prev" aria-label="Previous Slide">
+      <i class="fas fa-chevron-left"></i>
+    </button> %>
+    <%# <button data-action="carousel#next" aria-label="Next Slide">
+      <i class="fas fa-chevron-right"></i>
+    </button> %>
+  <%# </div> %>
+
+  <div id="carouselAutoplaying" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselAutoplaying" data-bs-slide-to="0" class="active indicator-carousel" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselAutoplaying" data-bs-slide-to="1" aria-label="Slide 2" class="indicator-carousel"></button>
+      <button type="button" data-bs-target="#carouselAutoplaying" data-bs-slide-to="2" aria-label="Slide 3" class="indicator-carousel"></button>
+    </div>
+    <div class="carousel-inner" >
+      <div class="carousel-item active banner-1" data-bs-interval="100000">
+        <h1 class="title-carousel">Your best friend awaits for you!</h1>
+        <div class="content-carousel">
+          <div>
+            <p class="text-carousel">Adopt your best company!</p>
+            <button class="button pulse">Adote já!</button>
+          </div>
+          <img src="<%= asset_path 'gato-roupa-xadrez.png' %>" class="d-block img-carousel" alt="...">
+        </div>
+      </div>
+      <div class="carousel-item" data-bs-interval="10000">
+        <img src="<%= asset_path 'cachorro-blusa-amarela.png' %>" class="d-block img-carousel" alt="...">
+      </div>
+      <div class="carousel-item" data-bs-interval="10000">
+        <img src="<%= asset_path 'fernandinho.png' %>"class="d-block img-carousel" alt="...">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselAutoplaying" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselAutoplaying" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+
+  </div>
+   <p><div> Arrow icons made by <a href="https://www.flaticon.com/authors/lizel-arina" title="Lizel Arina"> Lizel Arina </a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com'</a></div></p>
+</div>

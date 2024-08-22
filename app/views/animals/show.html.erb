@@ -1,1 +1,11 @@
 <h1>Pet's profile </h1>
+<div class="container">
+  <h1>Detalhes do Animal</h1>
+  <h2><%= @animal.name %></h2>
+  <p><%= @animal.breed %></p>
+  <p><%= @animal.size %></p>
+  <p><%= @animal.gender %></p>
+  <p><%= @animal.age %></p>
+  <%= link_to "Delete", animal_path(@animal),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+</div>
