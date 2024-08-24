@@ -1,103 +1,103 @@
-<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url()">
+<div class="card-category">
   <div class="container">
     <h2>Adopt a Pet. Unconditional love!</h2>
     <p>Here is a list of all the animals available for adoption</p>
   </div>
 </div>
 
-<div class="container">
-  <h1>Filter Animals</h1>
+<div class="row">
+  <div class="container col-12 col-md-3 pt-5 ">
+    <h1 class="ps-3">Filter Animals</h1>
 
-  <%= form_with url: animals_path, method: :get, local: true do |form| %> <!-- Início do form_with -->
-    <div class="row">
-      <div class="col-md-4">
+    <%= form_with url: animals_path, class: "row ps-3", method: :get, local: true do |form| %> <!-- Início do form_with -->
+
+      <div class="col-md-6 col-6">
         <%= form.label :breed %>
         <%= form.text_field :breed, class: "form-control" %>
       </div>
-      <div class="col-md-4">
+
+      <div class="col-md-6 col-6">
         <%= form.label :size %>
         <%= form.select :size, options_for_select([['Small', 'small'], ['Medium', 'medium'], ['Large', 'large']]), { include_blank: 'All Sizes' }, class: "form-control" %>
       </div>
-    </div>
 
-    <div class="row">
-      <div class="col-md-4">
+      <div class="col-md-6 col-6">
         <%= form.label :gender %>
         <%= form.select :gender, options_for_select([['Male', 'male'], ['Female', 'female']]), { include_blank: 'All Genders' }, class: "form-control" %>
       </div>
-      <div class="col-md-4">
+
+      <div class="col-md-6 col-6">
         <%= form.label :age %>
         <%= form.number_field :age, class: "form-control" %>
       </div>
-      <div class="col-md-4">
+
+      <div class="col-md-6 col-6">
         <%= form.label :castrated %>
         <%= form.select :castrated, options_for_select([['Yes', true], ['No', false]]), { include_blank: 'Both' }, class: "form-control" %>
       </div>
-    </div>
 
-    <div class="row">
-      <div class="col-md-4">
+      <div class="col-md-6 col-6">
         <%= form.label :vaccinated %>
         <%= form.select :vaccinated, options_for_select([['Yes', true], ['No', false]]), { include_blank: 'Both' }, class: "form-control" %>
       </div>
-      <div class="col-md-4">
+
+      <div class="col-md-6 col-6">
         <%= form.label :dewormed %>
         <%= form.select :dewormed, options_for_select([['Yes', true], ['No', false]]), { include_blank: 'Both' }, class: "form-control" %>
       </div>
-      <div class="col-md-4">
+
+      <div class="col-md-6 col-6">
         <%= form.label :special_needed %>
         <%= form.text_field :special_needed, class: "form-control" %>
       </div>
-    </div>
 
-    <div class="row">
-      <div class="col-md-4">
+      <div class="col-md-6 col-6">
         <%= form.label :location %>
         <%= form.text_field :location, class: "form-control" %>
       </div>
-    </div>
 
-    <div class="row mt-3">
-      <div class="col-md-12">
-        <%= form.submit "Search", class: "btn btn-primary" %>
+      <div class="row mt-3">
+        <div class="col-md-12">
+          <%= form.submit "Search", class: "button button pulse" %>
+        </div>
       </div>
-    </div>
-  <% end %> <!-- Fechando form_with -->
+    <% end %> <!-- Fechando form_with -->
 
-</div>
+  </div>
 
-<section class="wrapper">
-  <div class="container">
-    <div class="row">
-      <% if @animals.present? %> <!-- Início do if -->
-        <% @animals.each do |animal| %> <!-- Início do loop each -->
-          <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
-            <%= link_to animal_path(animal), class: "content_link" do %> <!-- Início do link_to -->
-              <div class="card text-dark card-has-bg click-col" style="background-image:url('https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg')">
-                <img class="card-img d-none" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg">
-                <div class="card-img-overlay d-flex flex-column">
-                  <div class="card-body">
-                    <!-- You can add more details here if needed -->
-                  </div>
-                  <div class="card-footer">
-                    <div class="media">
-                      <div class="media-body">
-                        <h4 class="my-0 text-dark d-block"><%= animal.name %></h4>
-                        <small><%= animal.gender %></small>
-                      </div>
+  <section class="wrapper col-12 col-md-9 pt-5">
+    <div class="container">
+      <div class="row">
+        <% if @animals.present? %>
+          <% @animals.each do |animal| %>
+            <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+              <%= link_to animal_path(animal), class: "content_link text-decoration-none" do %>
+                <div class="card text-dark card-has-bg click-col" style="background-image:url('https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg')">
+                  <img class="card-img d-none" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg">
+                  <div class="card-img-overlay d-flex flex-column justify-content-between">
+                    <div class="card-body">
+                      <!-- You can add more details here if needed -->
                     </div>
-                    <%= link_to "Know More", animal_path(animal), class: 'know_more_button' %>
+                    <div class="card-footer">
+                      <div class="media">
+                        <div class="media-body text-center">
+                          <h3 class="my-0 text-light d-block"><%= animal.name %></h3>
+                          <medium class="text-light"><%= animal.gender %></medium>
+                        </div>
+                      </div>
+                      <%= link_to "Know More", animal_path(animal), class: 'know_more_button mt-2 text-center button pulse' %>
+                    </div>
                   </div>
                 </div>
-              </div>
-            <% end %> <!-- Fechando link_to -->
-          </div>
-        <% end %> <!-- Fechando each -->
-      <% else %>
-        <h1>No animals available yet</h1>
-      <% end %> <!-- Fechando if -->
+              <% end %>
+            </div>
+          <% end %>
+        <% else %>
+          <h1>No animals available yet</h1>
+        <% end %>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+</div>
 
 <%= link_to "Add New Animal", new_animal_path, class: 'add_animal_button' %>
