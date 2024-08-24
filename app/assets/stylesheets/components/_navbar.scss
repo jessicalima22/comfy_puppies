@@ -12,8 +12,13 @@
 
 .navbar-lewagon .navbar-brand img, img.avatar {
   //width: 40px; default
-  width: 30px; //comfy mobile
+  width: 60px; //comfy mobile
 }
+
+
+// .background-test {
+//   background-color: #00ff4c !important;
+// }
 
 //---------------------------------------------------------------------------------------------
 
@@ -82,7 +87,7 @@ button.navbar-toggler {
     font-size: 1rem;
   }
   .navbar-lewagon .navbar-brand img, img.avatar {
-    width: 40px; //default
+    width: 80px; //default
   }
 
   button.navbar-toggler {
