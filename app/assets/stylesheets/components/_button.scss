@@ -49,6 +49,41 @@
   background-color: #65190f;
 }
 
+.know_more_button {
+  background-color: #72190D;
+  color: white;
+  text-decoration: none;
+  width: 50%; // Adjust width to be proportional
+  height: auto; // Height will adjust based on content
+  padding: 10px 0; // Padding for height
+  font-family: $headers-font;
+  font-size: 1rem; // Increased font size for better proportion
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+
+  &:hover {
+    background-color: darken(#72190D, 10%);
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+.card-footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
 //tablet adaptation
 @media (min-width: $breakpoint-tablet) {
   .button {
