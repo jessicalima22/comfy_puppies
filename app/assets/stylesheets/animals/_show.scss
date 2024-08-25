@@ -1,0 +1,31 @@
+.container-show{
+  font-size: medium;
+  color:  #72190D;
+  text-align: center;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 20px;
+}
+
+.custom-padding-top {
+  padding-top: 2rem; /* Adjust the value as needed */
+}
+
+.animal-photo {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.container-show .img-fluid {
+  max-width: 100%;
+  height: auto;
+  margin-right: 20px;
+}
+
+.container-show h1, .container-show h2, .container-show p {
+  margin-bottom: 15px;
+}
