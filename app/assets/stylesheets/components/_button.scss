@@ -3,6 +3,7 @@
 .button {
   background-color: #72190D;
   color: white;
+  text-decoration: none; /* Removes underline */
   width: 63px;
   height: 28px;
   font-family: $headers-font;
@@ -17,6 +18,7 @@
 .btn-login {
   background-color: #72190D;
   color: white;
+  text-decoration: none; /* Removes underline */
   width: 100%; /* Make the button take the full width of its container */
   margin-bottom: 5%;
   height: 36px;
@@ -52,10 +54,10 @@
 .know_more_button {
   background-color: #72190D;
   color: white;
-  text-decoration: none;
+  text-decoration: none; /* Removes underline */
   width: 50%; // Adjust width to be proportional
   height: auto;
-  line-height: 2.2;// Height will adjust based on content
+  line-height: 2.2; // Height will adjust based on content
   padding: 10px 0; // Padding for height
   font-family: $headers-font;
   font-size: 1rem; // Increased font size for better proportion
@@ -81,7 +83,6 @@
   .button-group {
     display: flex;
     flex-wrap: wrap;
-
 
     .btn {
       font-weight: 600;
@@ -113,6 +114,7 @@
       background-color: #6c757d;
       border-color: #545b62;
     }
+
     .custom-padding-top {
       padding-top: 20px; /* Adjust as needed */
     }
@@ -124,7 +126,6 @@
     .text-center {
       text-align: center;
     }
-
   }
 }
 
@@ -135,8 +136,7 @@
   align-items: center;
 }
 
-
-//tablet adaptation
+// Tablet adaptation
 @media (min-width: $breakpoint-tablet) {
   .button {
     font-size: 1rem;

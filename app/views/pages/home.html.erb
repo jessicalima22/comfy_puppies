@@ -27,6 +27,7 @@
       <button type="button" data-bs-target="#carouselAutoplaying" data-bs-slide-to="1" aria-label="Slide 2" class="indicator-carousel"></button>
       <button type="button" data-bs-target="#carouselAutoplaying" data-bs-slide-to="2" aria-label="Slide 3" class="indicator-carousel"></button>
     </div>
+
     <div class="carousel-inner" >
 
       <div class="carousel-item active banner-1" data-bs-interval="100000">
@@ -36,33 +37,43 @@
             <p class="text-carousel">Adopt your best company!</p>
             <button class="button pulse"><%= link_to "Adopt now!", animals_path %></button>
           </div>
-          <img src="<%= asset_path 'gato-roupa-xadrez.png' %>" class="d-block img-carousel" alt="...">
+          <img src="<%= asset_path 'gatohome.png' %>" class="d-block img-carousel" alt="...">
         </div>
       </div>
 
       <div class="carousel-item banner-2" data-bs-interval="100000">
-        <h1 class="title-carousel">Let's find a family for them!</h1>
+        <h1 class="title-carousel">Let's find him a home!</h1>
         <div class="content-carousel">
           <div>
-            <p class="text-carousel">Do you have a pet to put up for adoption? We'll help you!</p>
+            <p class="text-carousel">Found a pet and can't keep him? We will help!</p>
             <button class="button pulse"><%= link_to "Register for adoption", new_animal_path %></button>
           </div>
           <img src="<%= asset_path 'cachorro-blusa-amarela.png' %>" class="d-block img-carousel dog-yellow" alt="...">
         </div>
       </div>
 
-      <div class="carousel-item" data-bs-interval="10000">
-        <img src="<%= asset_path 'fernandinho.png' %>"class="d-block img-carousel" alt="...">
+
+      <div class="carousel-item banner-1" data-bs-interval="10000">
+        <h1 class="title-carousel">AAAAAAAAAAAAAAA</h1>
+        <div class="content-carousel">
+          <div>
+            <p class="text-carousel">BBBBBBBBBBBBBB</p>
+            <button class="button pulse"><%= link_to "Adote já!", animals_path %></button>
+          </div>
+          <img src="<%= asset_path 'gatohome.png' %>" class="d-block img-carousel" alt="...">
+        </div>
       </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselAutoplaying" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselAutoplaying" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
+
+</div>
+
+<button class="carousel-control-prev" type="button" data-bs-target="#carouselAutoplaying" data-bs-slide="prev">
+  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+  <span class="visually-hidden">Previous</span>
+</button>
+<button class="carousel-control-next" type="button" data-bs-target="#carouselAutoplaying" data-bs-slide="next">
+  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+  <span class="visually-hidden">Next</span>
+</button>
 
   </div>
    <p><div> Arrow icons made by <a href="https://www.flaticon.com/authors/lizel-arina" title="Lizel Arina"> Lizel Arina </a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com'</a></div></p>
