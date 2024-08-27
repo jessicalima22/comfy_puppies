@@ -24,14 +24,19 @@ photo_urls = [
   "https://res.cloudinary.com/datqpbimu/image/upload/v1724738560/salem_yf2az0.jpg",
   "https://res.cloudinary.com/datqpbimu/image/upload/v1724738560/tuti_r578mb.jpg",
   "https://res.cloudinary.com/datqpbimu/image/upload/v1724729729/cat_rir9zg.png",
-  "https://res.cloudinary.com/datqpbimu/image/upload/v1724729730/cat3_emoyue.png"
+  "https://res.cloudinary.com/datqpbimu/image/upload/v1724729730/cat3_emoyue.png",
+  "https://res.cloudinary.com/datqpbimu/image/upload/v1724789047/Frederico_czjlos.jpg",
+  "https://res.cloudinary.com/datqpbimu/image/upload/v1724789081/Penelope_ormn2y.jpg",
+  "https://res.cloudinary.com/datqpbimu/image/upload/v1724789080/Lion_xaoi5m.jpg",
+  "https://res.cloudinary.com/datqpbimu/image/upload/v1724789480/sophie_w2pkkq.jpg"
 ]
 
+puts "Photos loaded, wait for animals creation...."
 
 12.times do |i|
   user = User.create!(email: "user#{i+1}@hotmail.com", password: "123456" )
 
-  photo_url = photo_urls.sample
+  photo_url = photo_urls.pop
 
   Animal.create!(
     user: user,
@@ -47,3 +52,5 @@ photo_urls = [
     photo: ActiveStorage::Blob.create_and_upload!(io: URI.open(photo_url), filename: "animal_photo_#{i+1}.jpg", content_type: 'image/jpeg')
   )
 end
+
+puts "Animals created!"
