@@ -24,8 +24,7 @@ photo_urls = [
   "https://res.cloudinary.com/datqpbimu/image/upload/v1724738560/salem_yf2az0.jpg",
   "https://res.cloudinary.com/datqpbimu/image/upload/v1724738560/tuti_r578mb.jpg",
   "https://res.cloudinary.com/datqpbimu/image/upload/v1724729729/cat_rir9zg.png",
-  "https://res.cloudinary.com/datqpbimu/image/upload/v1724729730/cat3_emoyue.png",
-  "https://res.cloudinary.com/datqpbimu/image/upload/v1724734336/development/nmmwfbzt11jxwzcyo67y5kpa0ndo.png",
+  "https://res.cloudinary.com/datqpbimu/image/upload/v1724729730/cat3_emoyue.png"
 ]
 
 
