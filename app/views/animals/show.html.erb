@@ -1,15 +1,35 @@
-<h1>Pet's profile </h1>
-<div class="container">
-  <h1>Detalhes do Animal</h1>
-  <h2>Name: <%= @animal.name %></h2>
-  <p>Breed: <%= @animal.breed %></p>
-  <p>Size: <%= @animal.size %></p>
-  <p>Gender: <%= @animal.gender %></p>
-  <p>Age: <%= @animal.age %></p>
-  <%= link_to "Delete", animal_path(@animal), class: "btn btn-danger",
-  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-  <br>
-  <%= link_to 'Editar', edit_animal_path(@animal) %> |
-  <%= link_to 'Adotar', new_adoption_path(animal_id: @animal) %> |
-  <%= link_to 'Voltar', animals_path %>
+<div class="container-show mt-5 custom-padding-top">
+  <div class="row">
+    <div class="col-sm-12 col-md-6">
+      <% if @animal.photo.attached? %>
+        <%= image_tag @animal.photo, class: "img-fluid", alt: @animal.name %>
+      <% else %>
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" class="img-fluid" alt="Default Image">
+      <% end %>
+    </div>
+    <div class="col-sm-12 col-md-6 mt-3">
+      <h1><strong>Pet's profile</strong></h1>
+      <h2>Name: <%= @animal.name %></h2>
+      <p>Breed: <%= @animal.breed %></p>
+      <p>Size: <%= @animal.size %></p>
+      <p>Gender: <%= @animal.gender %></p>
+      <p>Age: <%= @animal.age %></p>
+      <p>Castrated: <%= @animal.castrated %></p>
+      <p>Dewormed: <%= @animal.dewormed %></p>
+      <p>Vaccinated: <%= @animal.vaccinated %></p>
+      <p>Special Needed: <%= @animal.special_needed %></p>
+
+        <!-- Other buttons -->
+        <%= link_to "Delete", animal_path(@animal), class: "btn btn-danger mx-2", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+        <%= link_to 'Edit', edit_animal_path(@animal), class: "btn btn-primary mx-2" %>
+        <%= link_to 'Back', animals_path, class: "btn btn-secondary mx-2" %>
+
+      <p class="text-center mt-4"><strong>Want to adopt me? Talk to my tutor!</strong></p>
+
+      <div class="text-center mt-4">
+        <!-- Larger "Adopt" button -->
+        <%= link_to 'Adopt', new_adoption_path(animal_id: @animal), class: "btn btn-success btn-lg mb-3" %>
+      </div>
+    </div>
+  </div>
 </div>

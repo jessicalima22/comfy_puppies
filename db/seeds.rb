@@ -25,6 +25,8 @@ puts "Creating Animals"
     gender: Faker::Creature::Dog.gender,
     size: Faker::Creature::Dog.size,
     castrated: rand(1..10).odd?,
-    vaccinated: [true, false].sample
+    vaccinated: [true, false].sample,
+    dewormed: [true, false].sample,
+    special_needed: [true, false].sample
   )
 end
