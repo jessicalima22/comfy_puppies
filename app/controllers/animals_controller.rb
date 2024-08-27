@@ -11,6 +11,7 @@ class AnimalsController < ApplicationController
     @animals = @animals.where(dewormed: params[:dewormed]) if params[:dewormed].present?
     @animals = @animals.where("special_needed ILIKE ?", "%#{params[:special_needed]}%") if params[:special_needed].present?
     @animals = @animals.where("location ILIKE ?", "%#{params[:location]}%") if params[:location].present?
+    @animal = Animal.new
   end
   def show
   end
