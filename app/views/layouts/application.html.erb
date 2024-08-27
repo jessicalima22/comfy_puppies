@@ -10,9 +10,8 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body class="background-test"><%= render "shared/navbar" %>
-<%= render "shared/flashes" %>
-
+  <body><%= render "shared/navbar" %>
+    <%= render "shared/flashes" %>
     <%= yield %>
   </body>
 </html>

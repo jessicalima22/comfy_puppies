@@ -1,7 +1,14 @@
 
+.banner-1, .banner-2 {
+  padding: calc(42px + 3%) 15% 2% 15%;
+}
+
 .banner-1 {
   background-color: $amarelo-comfy;
-  padding: calc(42px + 3%) 15% 2% 15%;
+}
+
+.banner-2 {
+  background-color: $azul-comfy;
 }
 
 .content-carousel {
@@ -11,6 +18,10 @@
 
 .img-carousel {
   width: 50%;
+}
+
+.dog-yellow {
+  width: 30%;
 }
 
 .title-carousel, .text-carousel{
@@ -50,7 +61,7 @@ p.text-carousel {
 //breakpoint tablet
 
 @media (min-width: $breakpoint-tablet) {
-  .banner-1 {
+  .banner-1, .banner-2 {
     padding: 5% 15%;
   }
 
