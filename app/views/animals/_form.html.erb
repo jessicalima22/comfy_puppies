@@ -5,10 +5,13 @@
     <%= f.input :size %>
     <%= f.input :gender %>
     <%= f.input :age %>
+    <div class="input-group">
     <%= f.input :castrated %>
     <%= f.input :vaccinated %>
     <%= f.input :dewormed %>
+    </div>
     <%= f.input :special_needed %>
+    <%= f.input :photo, as: :file %>
     <%= f.submit class: 'btn btn-primary' %>
   <% end %>
   <%= link_to 'Voltar', animals_path %>
