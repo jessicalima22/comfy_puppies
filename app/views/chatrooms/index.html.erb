@@ -1,0 +1,10 @@
+<div class="container">
+  <h1>chatrooms</h1>
+  <ul>
+    <% @chatrooms.each do |chatroom| %>
+      <li><%= link_to chatroom.name, chatroom_path(chatroom) %></li>
+    <% end %>
+  </ul>
+
+  <%= link_to 'New Chatroom', new_chatroom_path, class: "btn btn-secondary" %>
+</div>
