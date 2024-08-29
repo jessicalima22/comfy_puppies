@@ -1,0 +1,18 @@
+  add_cloudnary                         [m be5bc92 [[34morigin/add_cloudnary[m] add cloudinary + banner 2 + alguns edits na view new para teste do cloudinary
+  add_pixels_navbar                     [m 27487fd add pixels navbar
+  ajuste_tamanho_navbar_e_hamburger     [m 71d3a5c Merge branch 'main' into ajuste_tamanho_navbar_e_hamburger
+  arrumando_animals_style               [m 43b514e arrumando animals style nos arquivos corretos
+  banner-1                              [m 9d4c81f banner-1 + breakpoints + fonte padrão
+  botão_padrão                          [m 88381d0 [[34morigin/botão_padrão[m] atulizando gemas 7
+  carrossel_home_gato_novo              [m 59d7ab2 testando tag cloudinary no show
+  fonte_breakpoints_banner1             [m 796414f alteraçaõ do tamanho das fontes pelos breakpoints
+  fonte_global_titulos                  [m b01acd2 alteração da fonte global de título para montserrat
+  front-animals                         [m c72d970 [[34morigin/front-animals[m: behind 9] botão padrão com efeito hover e breakpoints
+  front_home_css                        [m 59d7ab2 [[34morigin/front_home_css[m: ahead 11] testando tag cloudinary no show
+  front_login                           [m 37b048d [[34morigin/front_login[m: behind 12] Login alterado
+  home_padronizando_css_e_padding_navbar[m a34c4cc home com padrão de breakpoints css e padding para compensar navbar
+* [32mmain                                  [m 204f63b [[34morigin/main[m] Merge branch 'main' of github.com:jessicalima22/comfy_puppies
+  navbar-transparent                    [m 1148a20 navbar transparente centralizada
+  photo_seeds                           [m 4d66aa3 [[34morigin/photo_seeds[m] Merge branch 'main' into photo_seeds mergindo main com photo seeds
+  resolução_final_navbar                [m 7c941ef logo, avatar e altura ok, caixa suspensa de logout na nav extendida
+  verificando_blobs                     [m 63603ff Merge pull request #29 from jessicalima22/front-animals-show
