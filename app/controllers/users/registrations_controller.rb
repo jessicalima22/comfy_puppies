@@ -1,7 +1,18 @@
 # frozen_string_literal: true
 
 class Users::RegistrationsController < Devise::RegistrationsController
-  params.require(:user).permit(:title, :body, :photo)
+  #params.require(:user).permit(:title, :body, :photo)
+
+  before_action :configure_permitted_parameters, if: :devise_controller?
+
+  protected
+
+  # Permite parâmetros adicionais para o sign up e account update
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:title, :body, :photo])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:title, :body, :photo])
+  end
+
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
 
