@@ -4,10 +4,8 @@
   <%= form_with(model: @adoption, local: true) do |form| %>
     <%= form.hidden_field :animal_id, value: @animal.id %>
 
-    <div>
-      <%= form.submit "Confirmar Adoção" %>
-    </div>
-  <% end %>
-
-  <%= link_to 'Cancelar', animals_path %>
-</div>
+  <div>
+    <%= link_to 'Contact my Tutor', new_chatroom_path, class: 'btn btn-secondary' %> |
+    <%= link_to 'Cancel adoption', animals_path, class: 'btn btn-secondary' %>
+  </div>
+<% end %>

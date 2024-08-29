@@ -1,0 +1,15 @@
+<div class="container">
+  <h1><%= @chatroom.name %></h1>
+  <div data-controller="chatroom" data-chatroom-id="<%= @chatroom.id %>">
+    <div id="messages" data-chatroom-target="messages">
+      <% @chatroom.messages.each do |message| %>
+        <p><strong><%= message.user.name %>:</strong> <%= message.content %></p>
+      <% end %>
+    </div>
+
+    <form data-chatroom-target="form" data-action="submit->chatroom#sendMessage">
+      <input type="text" data-chatroom-target="input" placeholder="Write your message...">
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</div>
