@@ -16,9 +16,8 @@
     <%= form_with(model: @adoption, local: true) do |form| %>
       <%= form.hidden_field :animal_id, value: @animal.id %>
 
-      <div>
-        <%= form.submit "Converse com o Tutor", class: "adoption-button" %>
-      </div>
-    <% end %>
+  <div>
+    <%= link_to 'Contact my Tutor', new_chatroom_path, class: 'btn btn-secondary' %> |
+    <%= link_to 'Cancel adoption', animals_path, class: 'btn btn-secondary' %>
   </div>
-</div>
+<% end %>
