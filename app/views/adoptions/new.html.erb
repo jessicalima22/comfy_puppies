@@ -1,7 +1,8 @@
-<h1>Adotar <%= @animal.name %></h1>
+<div class="banner-1">
+  <h1>Adotar <%= @animal.name %></h1>
 
-<%= form_with(model: @adoption, local: true) do |form| %>
-  <%= form.hidden_field :animal_id, value: @animal.id %>
+  <%= form_with(model: @adoption, local: true) do |form| %>
+    <%= form.hidden_field :animal_id, value: @animal.id %>
 
   <div>
     <%= link_to 'Contact my Tutor', new_chatroom_path, class: 'btn btn-secondary' %> |
