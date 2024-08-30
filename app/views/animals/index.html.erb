@@ -9,69 +9,61 @@
   <div class="container col-12 col-md-3 pt-5 ">
     <h1 class="ps-3">Filter Animals</h1>
 
-    <%= form_with url: animals_path, class: "row ps-3", method: :get, local: true do |form| %> <!-- Início do form_with -->
+    <%= form_with url: animals_path, method: :get, local: true, scope: :animal, class: "row ps-3" do |form| %>
+      <div class="col-md-6">
+        <%= form.label :name %>
+        <%= form.text_field :name, value: params.dig(:animal, :name), class: 'form-control' %>
+      </div>
 
-      <div class="col-md-6 col-6">
+      <div class="col-md-6">
         <%= form.label :breed %>
-        <%= form.text_field :breed, class: "form-control" %>
+        <%= form.text_field :breed, value: params.dig(:animal, :breed), class: 'form-control' %>
       </div>
 
-      <div class="col-md-6 col-6">
+      <div class="col-md-6">
         <%= form.label :size %>
-        <%= form.select :size, options_for_select([['Small', 'small'], ['Medium', 'medium'], ['Large', 'large']]), { include_blank: 'All Sizes' }, class: "form-control" %>
+        <%= form.select :size, options_for_select([['Small', 'small'], ['Medium', 'medium'], ['Large', 'large']], params.dig(:animal, :size)), { include_blank: 'All Sizes' }, class: 'form-control' %>
       </div>
 
-      <div class="col-md-6 col-6">
+      <div class="col-md-6">
         <%= form.label :gender %>
-        <%= form.select :gender, options_for_select([['Male', 'male'], ['Female', 'female']]), { include_blank: 'All Genders' }, class: "form-control" %>
+        <%= form.select :gender, options_for_select([['Male', 'male'], ['Female', 'female']], params.dig(:animal, :gender)), { include_blank: 'All Genders' }, class: 'form-control' %>
       </div>
 
-      <div class="col-md-6 col-6">
+      <div class="col-md-6">
         <%= form.label :age %>
-        <%= form.number_field :age, class: "form-control" %>
+        <%= form.number_field :age, value: params.dig(:animal, :age), class: 'form-control' %>
       </div>
 
-      <div class="col-md-6 col-6">
+      <div class="col-md-6">
         <%= form.label :castrated %>
-        <%= form.select :castrated, options_for_select([['Yes', true], ['No', false]]), { include_blank: 'Both' }, class: "form-control" %>
+        <%= form.select :castrated, options_for_select([['Yes', true], ['No', false]], params.dig(:animal, :castrated)), { include_blank: 'Both' }, class: 'form-control' %>
       </div>
 
-      <div class="col-md-6 col-6">
+      <div class="col-md-6">
         <%= form.label :vaccinated %>
-        <%= form.select :vaccinated, options_for_select([['Yes', true], ['No', false]]), { include_blank: 'Both' }, class: "form-control" %>
+        <%= form.select :vaccinated, options_for_select([['Yes', true], ['No', false]], params.dig(:animal, :vaccinated)), { include_blank: 'Both' }, class: 'form-control' %>
       </div>
 
-      <div class="col-md-6 col-6">
+      <div class="col-md-6">
         <%= form.label :dewormed %>
-        <%= form.select :dewormed, options_for_select([['Yes', true], ['No', false]]), { include_blank: 'Both' }, class: "form-control" %>
+        <%= form.select :dewormed, options_for_select([['Yes', true], ['No', false]], params.dig(:animal, :dewormed)), { include_blank: 'Both' }, class: 'form-control' %>
       </div>
 
-      <div class="col-md-6 col-6">
+      <div class="col-md-6">
         <%= form.label :special_needed %>
-        <%= form.text_field :special_needed, class: "form-control" %>
+        <%= form.text_field :special_needed, value: params.dig(:animal, :special_needed), class: 'form-control' %>
       </div>
 
-      <div class="col-md-6 col-6">
+      <div class="col-md-6">
         <%= form.label :location %>
-        <%= form.text_field :location, class: "form-control" %>
+        <%= form.text_field :location, value: params.dig(:animal, :location), class: 'form-control' %>
       </div>
 
-
-      <%= form_with url: animals_path, method: :get, local: true do %>
-      <div class="form-group">
-        <%= label_tag :query, "Search by Keywords" %>
-        <%= text_field_tag :query, params[:query], class: 'form-control' %>
+      <div class="col-md-12 mt-3">
+        <%= form.submit "Search", class: "button button pulse" %>
       </div>
-
-      <div class="row mt-3">
-        <div class="col-md-12">
-          <%= form.submit "Search", class: "button button pulse" %>
-        </div>
-      </div>
-
-      <% end %>
-
-    <% end %> <!-- Fechando form_with -->
+    <% end %>
 
   </div>
 

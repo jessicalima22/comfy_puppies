@@ -1,18 +1,18 @@
 class AnimalsController < ApplicationController
 
   def index
+    filters = params[:animal] || {}
     @animals = Animal.all
-    if params[:query].present?
-      @animals = @animals.where("breed ILIKE ?", "%#{params[:breed]}%") if params[:breed].present?
-      @animals = @animals.where(size: params[:size]) if params[:size].present?
-      @animals = @animals.where(gender: params[:gender]) if params[:gender].present?
-      @animals = @animals.where(age: params[:age]) if params[:age].present?
-      @animals = @animals.where(castrated: params[:castrated]) if params[:castrated].present?
-      @animals = @animals.where(vaccinated: params[:vaccinated]) if params[:vaccinated].present?
-      @animals = @animals.where(dewormed: params[:dewormed]) if params[:dewormed].present?
-      @animals = @animals.where("special_needed ILIKE ?", "%#{params[:special_needed]}%") if params[:special_needed].present?
-      @animals = @animals.where("location ILIKE ?", "%#{params[:location]}%") if params[:location].present?
-    end
+    @animals = @animals.where('lower(name) = ?', filters[:name].downcase) if filters[:name].present?
+    @animals = @animals.where('lower(breed) = ?', filters[:breed].downcase) if filters[:breed].present?
+    @animals = @animals.where('lower(size) = ?', filters[:size].downcase) if filters[:size].present?
+    @animals = @animals.where('lower(gender) = ?', filters[:gender].downcase) if filters[:gender].present?
+    @animals = @animals.where('lower(age) = ?', filters[:age].downcase) if filters[:age].present?
+    @animals = @animals.where(castrated: filters[:castrated]) unless filters[:castrated].blank?
+    @animals = @animals.where(vaccinated: filters[:vaccinated]) unless filters[:vaccinated].blank?
+    @animals = @animals.where(dewormed: filters[:dewormed]) unless filters[:dewormed].blank?
+    @animals = @animals.where('lower(special_needed) LIKE ?', "%#{filters[:special_needed].downcase}%") if filters[:special_needed].present?
+    @animals = @animals.where('lower(location) LIKE ?', "%#{filters[:location].downcase}%") if filters[:location].present?
   end
 
   def show
@@ -34,7 +34,8 @@ class AnimalsController < ApplicationController
 
   def create
     @animal = Animal.new(animal_params)
-    if @animal.save
+    @animal.user = current_user
+    if @animal.save!
       redirect_to @animal
     else
       render :new
