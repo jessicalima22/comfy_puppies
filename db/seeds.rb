@@ -39,17 +39,18 @@ puts "Photos loaded, wait for animals creation...."
   photo_url = photo_urls.pop
 
   Animal.create!(
-    user: user,
-    name: Faker::Creature::Dog.name,
-    breed: Faker::Creature::Dog.breed,
-    age: Faker::Creature::Dog.age,
-    gender: Faker::Creature::Dog.gender,
-    size: Faker::Creature::Dog.size,
-    castrated: rand(1..10).odd?,
-    vaccinated: [true, false].sample,
-    dewormed: [true, false].sample,
-    special_needed: [true, false].sample,
-    photo: ActiveStorage::Blob.create_and_upload!(io: URI.open(photo_url), filename: "animal_photo_#{i+1}.jpg", content_type: 'image/jpeg')
+  user: user,
+  name: Faker::Creature::Dog.name,
+  breed: Faker::Creature::Dog.breed,
+  age: Faker::Creature::Dog.age,
+  gender: Faker::Creature::Dog.gender,
+  size: Faker::Creature::Dog.size,
+  castrated: rand(1..10).odd?,
+  vaccinated: [true, false].sample,
+  dewormed: [true, false].sample,
+  special_needed: [true, false].sample,
+  location: Faker::Address.city, # You can use city, state, or country based on your needs
+  photo: ActiveStorage::Blob.create_and_upload!(io: URI.open(photo_url), filename: "animal_photo_#{i+1}.jpg", content_type: 'image/jpeg')
   )
 end
 

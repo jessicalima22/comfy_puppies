@@ -20,6 +20,7 @@
       <p>Dewormed: <%= @animal.dewormed %></p>
       <p>Vaccinated: <%= @animal.vaccinated %></p>
       <p>Special Needed: <%= @animal.special_needed %></p>
+      <p>Location:<%= @animal.location %></p>
 
         <!-- Other buttons -->
         <%= link_to "Delete", animal_path(@animal), class: "btn btn-danger mx-2", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
@@ -34,4 +35,10 @@
       </div>
     </div>
   </div>
-<div class="container">
+</div>
+<%# <div id="map" style="width: 100%; height: 500px;"></div> %>
+ <div style="width: 100%; height: 600px;"
+    data-controller="map"
+    data-map-markers-value="<%= @markers.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+</div>
