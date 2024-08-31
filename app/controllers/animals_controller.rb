@@ -15,6 +15,15 @@ class AnimalsController < ApplicationController
   end
 
   def show
+    if @animal.geocoded?
+      @markers = [
+        {
+          lat: @animal.latitude,
+          lng: @animal.longitude
+        }]
+    else
+      @markers = []
+    end
     authorize @animal
   end
 
