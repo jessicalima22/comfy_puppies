@@ -1,5 +1,5 @@
 class AnimalsController < ApplicationController
-
+  before_action :set_animal, only: [:show, :edit, :update, :destroy]
   def index
     @animals = policy_scope(Animal)
     @animals =  @animals.where("breed ILIKE ?", "%#{params[:breed]}%") if params[:breed].present?
@@ -51,6 +51,10 @@ class AnimalsController < ApplicationController
   end
 
   private
+
+  def set_animal
+    @animal = Animal.find(params[:id])
+  end
 
   def animal_params
     params.require(:animal).permit(:name, :breed, :age, :gender, :size, :castrated, :vaccinated, :dewormed, :special_needed, :location, :photo)
