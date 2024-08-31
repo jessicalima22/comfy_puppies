@@ -1,10 +1,25 @@
-<h1>Adotar <%= @animal.name %></h1>
+<div class="background_adoption">
+  <div class="container show_page banner-1">
+    <h1 class="adoption-title">Adoption is GREAT!</h1>
+    <h1>But...Are you ready for it?</h1>
+    <p>Adopting a pet is a lifelong commitment that comes with many responsibilities. Before you take this important step, consider the following:</p>
+    <ul>
+      <li><strong>Time Commitment:</strong> Pets require daily care, attention, and love. Are you prepared to dedicate the necessary time each day for feeding, exercise, grooming, and companionship?</li>
+      <li><strong>Financial Responsibility:</strong> Owning a pet involves ongoing costs for food, grooming, vet visits, and emergency care. Ensure you are financially ready to support your new companion.</li>
+      <li><strong>Long-Term Commitment:</strong> Pets live for many years. Consider how your life may change over time and if you are ready to care for your pet through all stages of its life.</li>
+      <li><strong>Living Situation:</strong> Make sure your living space is suitable for the type of pet you are adopting. Some pets need more space, while others may require a secure outdoor area.</li>
+      <li><strong>Knowledge and Preparation:</strong> Do you have the knowledge needed to care for your pet's specific needs? Researching the breed or species will help you understand their behavior, dietary requirements, and potential health issues.</li>
+      <li><strong>Emotional Readiness:</strong> Pets can bring immense joy, but they also require patience and understanding, especially during training and behavioral adjustments.</li>
+    </ul>
+    <p>Adoption is a beautiful way to bring a new member into your family, but it's essential to ensure that you are fully prepared for the responsibilities that come with it. If you're ready to provide a loving and stable home, then you're on the right path. If not, take some time to consider and prepare before making this life-changing decision.</p>
 
-<%= form_with(model: @adoption, local: true) do |form| %>
-  <%= form.hidden_field :animal_id, value: @animal.id %>
+    <%= form_with(model: @adoption, local: true) do |form| %>
+      <%= form.hidden_field :animal_id, value: @animal.id %>
 
-  <div>
-    <%= link_to 'Contact my Tutor', new_chatroom_path, class: 'btn btn-secondary' %> |
-    <%= link_to 'Cancel adoption', animals_path, class: 'btn btn-secondary' %>
+      <div>
+        /<!--<%= form.submit "Converse com o Tutor", class: "adoption-button" %>-->
+        <%= link_to 'Contact my Tutor', new_chatroom_path, class: "adoption-button" %>
+      </div>
+    <% end %>
   </div>
-<% end %>
+</div>

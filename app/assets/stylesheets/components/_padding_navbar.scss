@@ -1,0 +1,16 @@
+.padding_navbar {
+  padding-top: 50px;
+  //padding: calc(42px + 3%) 15% 2% 15%;
+}
+
+@media (min-width: $breakpoint-tablet) {
+  .padding_navbar {
+    padding: calc(52px + 3%) 15% 2% 15%;
+  }
+}
+
+@media (min-width: $breakpoint-desktop) {
+  .padding_navbar {
+    padding: calc(60px + 3%) 15% 2% 15%;
+  }
+}

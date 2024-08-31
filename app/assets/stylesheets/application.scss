@@ -3,15 +3,19 @@
 @import "config/colors";
 @import "config/bootstrap_variables";
 
+
 // External libraries
 @import "bootstrap";
 @import "font-awesome";
+@import url("https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.css");
 
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
 @import "animals/index";
 @import "devise/index";
+
+
 
 // Ensure body and html height are set for 100% height
 body, html {
@@ -20,4 +24,5 @@ body, html {
 
 a {
   text-decoration: none;
+  color:white;
 }

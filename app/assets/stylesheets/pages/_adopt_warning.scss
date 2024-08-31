@@ -1,0 +1,68 @@
+// /* Overall page styling */
+// body {
+//   background-color: #3B5998; /* Blue background for the rest of the page */
+//   font-family: Arial, sans-serif; /* Set a nice font for the whole page */
+//   color: #333333; /* Default text color */
+//   margin: 0;
+//   padding: 0;
+//   box-sizing: border-box;
+//   overflow: hidden; /* Prevent scrolling */
+//   height: 100vh; /* Ensure the body takes up the full viewport height */
+// }
+
+.background_adoption {
+  background-color: $azul-comfy;
+  padding: 1vh;
+}
+
+/* Container styling */
+.container.show_page.banner-1 {
+  background-color: #FFFFFF; /* White container */
+  padding: 4%; /* Reduce padding */
+  border-radius: 10px; /* Rounded corners for the container */
+  max-width: 50%; /* Limit the width of the container */
+  // height: 90vh; /* Set the height relative to the viewport */
+  margin: 5% auto; /* Center the container vertically */
+  margin-top: 43px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow for depth */
+}
+
+/* Styling for the title */
+.adoption-title {
+  font-size: 2.5rem; /* Adjust font size to fit the page */
+  font-weight: bold;
+  color: #72190D; /* Dark red for emphasis */
+  text-align: left;
+  margin-bottom: 10px; /* Reduce margin */
+}
+
+/* Styling for the paragraph text and list items */
+.container.show_page p,
+.container.show_page ul li {
+  font-size: 1.1rem; /* Slightly reduce font size */
+  line-height: 1.4; /* Adjust line height */
+  color: #333333; /* Ensure the color contrasts well with the background */
+  margin-bottom: 8px; /* Reduce space between elements */
+}
+
+/* Optional: Style for the list items */
+.container.container.show_page.banner-1 ul li {
+  margin-bottom: 8px; /* Add space between list items */
+}
+
+
+//breakpoint tablet
+@media (min-width: $breakpoint-tablet) {
+  .container.show_page.banner-1 {
+    margin-top: calc(48.17px + 3%);
+    margin-bottom: 3vh;
+  }
+}
+
+//breakpoint desktop
+@media (min-width: $breakpoint-desktop) {
+  .container.show_page.banner-1 {
+    margin-top: calc(60px + 3%);
+    margin-bottom: 3vh;
+  }
+}
