@@ -21,7 +21,8 @@
       <p>Vaccinated: <%= @animal.vaccinated %></p>
       <p>Special Needed: <%= @animal.special_needed %></p>
       <p>Location:<%= @animal.location %></p>
-      
+      <p><strong>Created by:</strong> <%= @animal.user.email %></p>
+
         <!-- Other buttons -->
         <% if policy(@animal).destroy? %>
           <%= link_to "Delete", animal_path(@animal), class: "btn btn-danger mx-2", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
