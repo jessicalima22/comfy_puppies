@@ -55,6 +55,7 @@ gem "simple_form", github: "heartcombo/simple_form"
 gem "sassc-rails"
 gem "faker", "~> 3.4"
 gem "cloudinary"
+gem "pundit"
 
 group :development, :test do
   gem "dotenv-rails"

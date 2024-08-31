@@ -6,17 +6,20 @@ class AdoptionsController < ApplicationController
   end
 
   def show
+    authorize @adoption
   end
 
   def new
     @animal = Animal.find(params[:animal_id])
     @adoption = Adoption.new
+    authorize @animal
   end
 
   def create
     @adoption = Adoption.new(adoption_params)
     @adoption.user = current_user
     @adoption.animal = Animal.find(params[:adoption][:animal_id])
+    authorize @animal
     if @adoption.save
       redirect_to @adoption, notice: 'Adoção realizada com sucesso!'
     else

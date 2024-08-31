@@ -72,7 +72,9 @@
           <% @animals.each do |animal| %>
             <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
               <%= link_to animal_path(animal), class: "content_link text-decoration-none" do %>
-                <div class="card text-dark card-has-bg click-col" style="background-image: url(<%= url_for(animal.photo) %>);">
+
+
+                <div class="card text-dark card-has-bg click-col" style="background-image: url(<%= animal.photo.present? ? url_for(animal.photo) : 'fallback-image-url.jpg' %>);">
                   <img class="card-img d-none" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg">
 
                   <div class="card-img-overlay d-flex flex-column justify-content-between">

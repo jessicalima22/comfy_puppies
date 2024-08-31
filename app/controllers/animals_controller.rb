@@ -1,8 +1,8 @@
 class AnimalsController < ApplicationController
   before_action :set_animal, only: [:show, :edit, :update, :destroy]
   def index
-    @animals = Animal.all
-    @animals = @animals.where("breed ILIKE ?", "%#{params[:breed]}%") if params[:breed].present?
+    @animals = policy_scope(Animal)
+    @animals =  @animals.where("breed ILIKE ?", "%#{params[:breed]}%") if params[:breed].present?
     @animals = @animals.where(size: params[:size]) if params[:size].present?
     @animals = @animals.where(gender: params[:gender]) if params[:gender].present?
     @animals = @animals.where(age: params[:age]) if params[:age].present?
@@ -13,16 +13,20 @@ class AnimalsController < ApplicationController
     @animals = @animals.where("location ILIKE ?", "%#{params[:location]}%") if params[:location].present?
     @animal = Animal.new
   end
+
   def show
+    authorize @animal
   end
 
   def new
     @animal = Animal.new
+    authorize @animal
   end
 
   def create
     @animal = Animal.new(animal_params)
     @animal.user = current_user
+    authorize @animal
     if @animal.save
       redirect_to animal_path(@animal)
     else
@@ -31,14 +35,17 @@ class AnimalsController < ApplicationController
   end
 
   def edit
+    authorize @animal
   end
 
   def update
+    authorize @animal
     @animal.update(animal_params)
     redirect_to animal_path(@animal)
   end
 
   def destroy
+    authorize @animal
     @animal.destroy
     redirect_to animals_path, status: :see_other
   end
