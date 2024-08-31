@@ -1,5 +1,6 @@
 <div class="container-show mt-5 custom-padding-top">
-  <div class="row">
+
+  <div class="l">
     <div class="col-sm-12 col-md-6">
       <% if @animal.photo.attached? %>
         <!--<%= image_tag @animal.photo, class: "img-fluid", alt: @animal.name %>-->
@@ -9,6 +10,46 @@
         <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" class="img-fluid" alt="Default Image">
       <% end %>
     </div>
+
+    <div class="carousel-show-animals">
+
+
+
+<div data-controller="show-carousel m-4">
+
+  <div class="carousel-container">
+    <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner" data-show-carousel-target="inner">
+        <div class="carousel-item active" data-bs-interval="10000">
+          <img src="https://res.cloudinary.com/datqpbimu/image/upload/v1724789047/Frederico_czjlos.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item" data-bs-interval="10000">
+          <img src="https://res.cloudinary.com/datqpbimu/image/upload/v1724789081/Penelope_ormn2y.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item" data-bs-interval="10000">
+          <img src="https://res.cloudinary.com/datqpbimu/image/upload/v1724738560/tuti_r578mb.jpg" class="d-block w-100" alt="...">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    <div class="highlighted-image" >
+      <img src="img" alt="Highlighted" class="img-fluid" data-show-carousel-target="highlightedImage">
+    </div>
+  </div>
+
+</div>
+
+
+
+    </div>
+
     <div class="col-sm-12 col-md-6 mt-3">
       <h1><strong>Pet's profile</strong></h1>
       <h2>Name: <%= @animal.name %></h2>
@@ -39,7 +80,9 @@
         <%= link_to 'Adopt', new_adoption_path(animal_id: @animal), class: "btn btn-success btn-lg mb-3" %>
       </div>
     </div>
+
   </div>
+
 </div>
 <%# <div id="map" style="width: 100%; height: 500px;"></div> %>
  <div style="width: 100%; height: 600px;"
