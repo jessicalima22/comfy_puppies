@@ -61,6 +61,64 @@ p.text-carousel {
   min-height: 30%;
 }
 
+//Reasons section
+.why-adopt-section {
+  padding: calc(42px + 3%) 15% 2% 15%;
+  background-color: $lightbrown-comfy; /* Light brown background */
+}
+
+.why-adopt-title {
+  text-align: center;
+  color: white;
+  font-size: 4em; /* Large font size */
+  font-family: 'Copperplate', fantasy; /* Cute font, adjust to your preference */
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.why-adopt-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.why-adopt-mini-text {
+  font-size: 1.6em; /* Slightly larger font for emphasis */
+  color: white;
+  margin-top: 10px;
+  max-width: 50%;
+}
+
+.why-adopt-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.why-adopt-image {
+  max-width: 30%; /* Image size as per previous sections */
+  border-radius: 10px;
+}
+
+.reasons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  max-width: 60%; /* Adjusted to give more space for text */
+  margin-left: 10vh;
+}
+
+.reason {
+  font-size: 1.7em; /* Increased size for emphasis */
+  color: white;
+  margin-bottom: 15px; /* Slightly more space between reasons */
+  display: flex;
+  align-items: center;
+}
+//Reasons section
+
 //breakpoint tablet
 @media (min-width: $breakpoint-tablet) {
 
