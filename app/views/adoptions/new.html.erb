@@ -17,7 +17,7 @@
       <%= form.hidden_field :animal_id, value: @animal.id %>
 
       <div>
-        <%= link_to 'Contact my Tutor', new_chatroom_path, class: "adoption-button" %>
+        <%= link_to 'Contact my Tutor', new_animal_chatroom_path(@animal), class: "adoption-button" %>
       </div>
     <% end %>
   </div>
