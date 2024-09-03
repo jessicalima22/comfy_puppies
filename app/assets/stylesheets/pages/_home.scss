@@ -105,6 +105,7 @@ p.text-carousel {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  font-size: 1.6-4em; /* Slightly larger font for emphasis */
   text-align: left;
   max-width: 60%; /* Adjusted to give more space for text */
   margin-left: 10vh;
@@ -113,10 +114,21 @@ p.text-carousel {
 .reason {
   font-size: 1.7em; /* Increased size for emphasis */
   color: white;
-  margin-bottom: 15px; /* Slightly more space between reasons */
+  margin-bottom: 20px; /* Slightly more space between reasons */
   display: flex;
   align-items: center;
 }
+
+.emoji-img {
+  max-width: 8vh;
+  margin-right: 5vh;
+}
+
+.emoji-img2 {
+  max-width: 8vh;
+  margin-left: 3vh;
+}
+
 //Reasons section
 
 //breakpoint tablet
