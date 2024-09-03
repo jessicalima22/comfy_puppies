@@ -1,8 +1,8 @@
 <div class="container">
-  <%= simple_form_for @chatroom do |f| %>
-    <%= f.input :name, label: "Nome da Sala" %>
+  <%= simple_form_for [@animal, @chatroom] do |f| %>
+    <%= f.input :name, label: "Chatroom Name" %>
 
     <%= f.submit class: 'btn btn-secondary' %>  |
-    <%= link_to 'Back', chatrooms_path, class: 'btn btn-secondary' %>
+    <%= link_to 'Back', animal_chatrooms_path(@animal), class: 'btn btn-secondary' %>
   <% end %>
 </div>
