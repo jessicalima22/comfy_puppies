@@ -8,10 +8,12 @@
 
 .banner-1 {
   background-color: $amarelo-comfy;
+  padding: calc(32px + 3%) 5% 2% 5%;
 }
 
 .banner-2 {
   background-color: $azul-comfy;
+  padding: calc(32px + 3%) 5% 2% 5%;
 }
 
 .content-carousel {
@@ -74,6 +76,7 @@ p.text-carousel {
   font-family: 'Copperplate', fantasy; /* Cute font, adjust to your preference */
   margin-bottom: 10px;
   font-weight: 500;
+  padding: calc(32px + 3%) 5% 2% 5%;
 }
 
 .why-adopt-text {
@@ -107,7 +110,8 @@ p.text-carousel {
   justify-content: center;
   text-align: left;
   max-width: 60%; /* Adjusted to give more space for text */
-  margin-left: 10vh;
+  margin-left: 5vh;
+
 }
 
 .reason {

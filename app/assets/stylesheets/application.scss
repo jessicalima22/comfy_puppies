@@ -20,6 +20,7 @@
 // Ensure body and html height are set for 100% height
 body, html {
   height: 100%;
+  overflow-x: hidden;
 }
 
 a {
