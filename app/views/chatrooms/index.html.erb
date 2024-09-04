@@ -2,9 +2,9 @@
   <h1>chatrooms</h1>
   <ul>
     <% @chatrooms.each do |chatroom| %>
-      <li><%= link_to chatroom.name, chatroom_path(chatroom) %></li>
+      <li><%= link_to chatroom.name, animal_chatroom_path(@animal, chatroom) %></li>
     <% end %>
   </ul>
 
-  <%= link_to 'New Chatroom', new_chatroom_path, class: "btn btn-secondary" %>
+  <%= link_to 'New Chatroom', new_animal_chatroom_path(@animal), class: "btn btn-secondary" %>
 </div>

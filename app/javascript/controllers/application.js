@@ -1,4 +1,5 @@
 import { Application } from "@hotwired/stimulus"
+// import "@rails/actioncable"
 // import MapController from "./controllers/map_controller"
 
 const application = Application.start()
