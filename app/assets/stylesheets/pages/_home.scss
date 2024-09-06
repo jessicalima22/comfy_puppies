@@ -1,3 +1,4 @@
+//Breakpoint mobile
 .carousel-item {
   height: 255px;
 }
@@ -65,13 +66,14 @@ p.text-carousel {
 .why-adopt-section {
   padding: calc(42px + 3%) 15% 2% 15%;
   background-color: $lightbrown-comfy; /* Light brown background */
+  width: 100%;
+  // overflow-x: hidden;
 }
 
 .why-adopt-title {
   text-align: center;
   color: white;
   font-size: 4em; /* Large font size */
-  font-family: 'Copperplate', fantasy; /* Cute font, adjust to your preference */
   margin-bottom: 10px;
   font-weight: 500;
 }
@@ -92,6 +94,7 @@ p.text-carousel {
 
 .why-adopt-content {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
 }
@@ -108,7 +111,7 @@ p.text-carousel {
   font-size: 1.6-4em; /* Slightly larger font for emphasis */
   text-align: left;
   max-width: 60%; /* Adjusted to give more space for text */
-  margin-left: 10vh;
+  padding: 3vh 0 0 3vh;
 }
 
 .reason {
@@ -128,7 +131,6 @@ p.text-carousel {
   max-width: 8vh;
   margin-left: 3vh;
 }
-
 //Reasons section
 
 //breakpoint tablet
@@ -170,6 +172,75 @@ p.text-carousel {
   .banner-1,.banner-2 {
     padding: calc(52px + 3%) 15% 2% 15%;
   }
+
+  //Reasons section
+.why-adopt-section {
+  padding: calc(42px + 3%) 15% 2% 15%;
+  background-color: $lightbrown-comfy; /* Light brown background */
+  width: 100%;
+  // overflow-x: hidden;
+}
+
+.why-adopt-title {
+  text-align: center;
+  color: white;
+  font-size: 4em; /* Large font size */
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.why-adopt-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.why-adopt-mini-text {
+  font-size: 1.6em; /* Slightly larger font for emphasis */
+  color: white;
+  margin-top: 10px;
+  max-width: 50%;
+}
+
+.why-adopt-content {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.why-adopt-image {
+  max-width: 30%; /* Image size as per previous sections */
+  border-radius: 10px;
+}
+
+.reasons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  max-width: 60%; /* Adjusted to give more space for text */
+  margin-left: 10vh;
+}
+
+.reason {
+  font-size: 1.7em; /* Increased size for emphasis */
+  color: white;
+  margin-bottom: 20px; /* Slightly more space between reasons */
+  display: flex;
+  align-items: center;
+}
+
+.emoji-img {
+  max-width: 8vh;
+  margin-right: 5vh;
+}
+
+.emoji-img2 {
+  max-width: 8vh;
+  margin-left: 3vh;
+}
+//Reasons section
 }
 
 //breakpoint desktop
