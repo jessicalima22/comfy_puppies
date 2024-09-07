@@ -8,7 +8,7 @@ class ChatroomPolicy < ApplicationPolicy
   class Scope < ApplicationPolicy::Scope
     # NOTE: Be explicit about which records you allow access to!
     def resolve
-      scope.all
+      user.chatrooms
     end
   end
 
@@ -17,7 +17,7 @@ class ChatroomPolicy < ApplicationPolicy
   end
 
   def show?
-    true
+    user.chatrooms.include?(record)
   end
 
   def new?
