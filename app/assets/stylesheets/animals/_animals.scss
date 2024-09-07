@@ -88,19 +88,7 @@
   background-size:120%;
   background-repeat:no-repeat;
   background-position: center center;
-  &:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: inherit;
-    -webkit-filter: grayscale(1);
-  -moz-filter: grayscale(100%);
-  -ms-filter: grayscale(100%);
-  -o-filter: grayscale(100%);
-  filter:none;}
+
 
   &:hover {
     transform: scale(0.98);
@@ -139,7 +127,6 @@
       margin-top:30px;
       transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
     }
-  cursor: pointer;
   transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
 }
   .card-img-overlay {
@@ -150,4 +137,9 @@
 }
 @media (max-width: 767px){
 
+}
+
+img-cards-index {
+  width: 300;
+  height: 450;
 }
