@@ -32,6 +32,26 @@
   text-align: center;
 }
 
+.know_more_button {
+  background-color: #72190D;
+  color: white;
+  text-decoration: none;
+  width: 50%;
+  margin-bottom: 5%;
+  height: 36px;
+  font-family: $headers-font;
+  font-size: 0.85rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
 @keyframes pulse {
   0% {
       transform: scale(1);
@@ -49,34 +69,6 @@
   transform: translateY(-5px);
   box-shadow: 0 0 15px #ff634780;
   background-color: #65190f;
-}
-
-.know_more_button {
-  background-color: #72190D;
-  color: white;
-  text-decoration: none; /* Removes underline */
-  width: 50%; // Adjust width to be proportional
-  height: auto;
-  line-height: 2.2; // Height will adjust based on content
-  padding: 10px 0; // Padding for height
-  font-family: $headers-font;
-  font-size: 1rem; // Increased font size for better proportion
-  font-weight: 700;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-
-  &:hover {
-    background-color: darken(#72190D, 10%);
-    transform: scale(1.05);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  }
-
-  &:active {
-    transform: scale(0.95);
-  }
 }
 
 .container-show {

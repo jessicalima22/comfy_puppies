@@ -21,7 +21,7 @@ class AdoptionsController < ApplicationController
     @adoption.animal = Animal.find(params[:adoption][:animal_id])
     authorize @animal
     if @adoption.save
-      redirect_to @adoption, notice: 'Adoção realizada com sucesso!'
+      redirect_to @adoption, notice: 'Adoption done successfuly!'
     else
       render :new
     end

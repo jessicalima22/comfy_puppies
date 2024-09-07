@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
-  get 'chatrooms/index'
-  get 'chatrooms/show'
-  get 'chatrooms/new'
-  get 'chatrooms/create'
+  get 'about', to: 'pages#about'
   devise_for :users
   root to: "pages#home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -13,8 +10,12 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
-  resources :animals
+  resources :animals do
+
+    resources :chatrooms, only: [:index, :show, :new, :create] do
+      resources :messages, only: :create
+    end
+  end
   resources :adoptions, only: [:new, :create, :index, :show]
-  resources :chatrooms, only: [:index, :show, :new, :create]
 
 end
