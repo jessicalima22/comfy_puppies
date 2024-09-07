@@ -4,7 +4,8 @@ class Animal < ApplicationRecord
   has_one :adopter, through: :adoptions, source: :user
   has_many :chatrooms
   belongs_to :user
-  has_one_attached :photo
+  has_many_attached :photos
+  validate :photos_count
   geocoded_by :location
   after_validation :geocode, if: :will_save_change_to_location?
 
@@ -25,4 +26,13 @@ class Animal < ApplicationRecord
   #   #   Animal.all.near(location, 500)
   #   # end
   # }
+  #
+  private
+
+  def photos_count
+
+    if photos.attached? && photos.length > 4
+      errors.add(:photos, 'You can upload a maximum of 4 photos.')
+    end
+  end
 end
