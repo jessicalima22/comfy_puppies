@@ -1,10 +1,12 @@
-//Breakpoint mobile
+//Breakpoint mobile ------------------------------------------------------
+
 .carousel-item {
-  height: 255px;
+  height: 500px;
 }
 
 .banner-1, .banner-2 {
-  padding: calc(42px + 3%) 15% 2% 15%;
+  padding: calc(42px + 3%) 15% 6% 15%;
+
 }
 
 .banner-1 {
@@ -17,12 +19,14 @@
 
 .content-carousel {
   display: flex;
+  flex-direction: column-reverse;
   justify-content: space-between;
+  align-items: center;
 }
 
 .img-banner-1 {
-  max-width: 30%;
-}
+  max-width: 30%;    width: 60%;
+    max-width: 315px;}
 
 .img-banner-2 {
   max-height: 229px; //altura do primeiro gato
@@ -56,13 +60,23 @@
 
 h1.title-carousel {
   font-weight: 500;
+  font-size: 2.5rem;
+  text-align: center;
 }
 
 p.text-carousel {
   min-height: 30%;
+  font-size: 0,001rem;
+  opacity: 0;
 }
 
-//Reasons section
+.text-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+//Reasons section Mobile
 .why-adopt-section {
   padding: calc(42px + 3%) 15% 2% 15%;
   background-color: $lightbrown-comfy; /* Light brown background */
@@ -89,7 +103,7 @@ p.text-carousel {
   font-size: 1.6em; /* Slightly larger font for emphasis */
   color: white;
   margin-top: 10px;
-  max-width: 50%;
+  max-width: 80%;
 }
 
 .why-adopt-content {
@@ -100,7 +114,7 @@ p.text-carousel {
 }
 
 .why-adopt-image {
-  max-width: 30%; /* Image size as per previous sections */
+  max-width: 80%; /* Image size as per previous sections */
   border-radius: 10px;
 }
 
@@ -110,8 +124,8 @@ p.text-carousel {
   justify-content: center;
   font-size: 1.6-4em; /* Slightly larger font for emphasis */
   text-align: left;
-  max-width: 60%; /* Adjusted to give more space for text */
-  padding: 3vh 0 0 3vh;
+  max-width: 80%; /* Adjusted to give more space for text */
+  padding: 3vh 0 0 0;
 }
 
 .reason {
@@ -131,9 +145,9 @@ p.text-carousel {
   max-width: 8vh;
   margin-left: 3vh;
 }
-//Reasons section
+//Reasons section Mobile
 
-//breakpoint tablet
+//breakpoint tablet ----------------------------------------------------------------------------
 @media (min-width: $breakpoint-tablet) {
 
   .carousel-item {
@@ -142,6 +156,13 @@ p.text-carousel {
 
   .carousel-indicators [data-bs-target]  {
     width: 7%;
+  }
+
+  .content-carousel {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
   }
 
   .carousel-indicators {
@@ -167,18 +188,32 @@ p.text-carousel {
     padding-top: 6%;
     font-size: 1.2rem;
     min-height: 40%;
+    opacity: 1;
   }
 
   .banner-1,.banner-2 {
     padding: calc(52px + 3%) 15% 2% 15%;
   }
 
-  //Reasons section
+  .text-button {
+
+    display: flex;
+    flex-direction: column;
+    align-items: normal;
+
+  }
+
+  h1.title-carousel {
+    font-weight: 500;
+    font-size: 2.5rem;
+    text-align: left;
+  }
+
+//Reasons section Tablet
 .why-adopt-section {
   padding: calc(42px + 3%) 15% 2% 15%;
   background-color: $lightbrown-comfy; /* Light brown background */
   width: 100%;
-  // overflow-x: hidden;
 }
 
 .why-adopt-title {
@@ -211,7 +246,7 @@ p.text-carousel {
 
 .why-adopt-image {
   max-width: 30%; /* Image size as per previous sections */
-  border-radius: 10px;
+  margin: 0 15vh;
 }
 
 .reasons {
@@ -220,7 +255,6 @@ p.text-carousel {
   justify-content: center;
   text-align: left;
   max-width: 60%; /* Adjusted to give more space for text */
-  margin-left: 10vh;
 }
 
 .reason {
