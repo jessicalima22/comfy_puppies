@@ -7,4 +7,19 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+
+
+
+  def animal_chatrooms
+    Chatroom.joins(:animal).where(animals: {user_id: id})
+  end
+
+  def animal_adopter_chatrooms
+    Chatroom.joins(:messages).where(messages: {user_id: id}).distinct
+  end
+
+  def chatrooms
+    (animal_chatrooms + animal_adopter_chatrooms).uniq
+  end
 end
