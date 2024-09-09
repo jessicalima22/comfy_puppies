@@ -2,7 +2,7 @@ class Animal < ApplicationRecord
   belongs_to :user
   has_one :adoption, dependent: :destroy
   has_one :adopter, through: :adoptions, source: :user
-  has_many :chatrooms
+  has_many :chatrooms, dependent: :destroy
   belongs_to :user
   has_many_attached :photos
   validate :photos_count

@@ -31,12 +31,41 @@ photo_urls = [
   "https://res.cloudinary.com/datqpbimu/image/upload/v1724789480/sophie_w2pkkq.jpg"
 ]
 
+
 puts "Photos loaded, wait for animals creation...."
+
+user = User.create!(email: "monika@gmail.com", password: "123456" )
+
+Animal.create!(
+      user: user,
+      name: "Buddy",
+      breed: "Labrador",
+      age: "5 years",
+      gender: "Male",
+      size: "Large",
+      castrated: true,
+      vaccinated: true,
+      dewormed: true,
+      special_needed: false,
+      location: "New York",
+      photos: [
+        ActiveStorage::Blob.create_and_upload!(
+          io: URI.open("https://res.cloudinary.com/dsoletyk5/image/upload/v1725718064/laura-chica-yUm0_Vp3T_E-unsplash_drrp5r.jpg"),
+          filename: "buddy_photo1.jpg",
+          content_type: 'image/jpeg'
+        ),
+        ActiveStorage::Blob.create_and_upload!(
+          io: URI.open("https://res.cloudinary.com/dsoletyk5/image/upload/v1725718063/laura-chica-fT1IJ04JwvU-unsplash_mlpo0u.jpg"),
+          filename: "buddy_photo2.jpg",
+          content_type: 'image/jpeg'
+        )
+      ]
+    )
+
+puts "animal personalizado created!"
 
 12.times do |i|
   user = User.create!(email: "user#{i+1}@hotmail.com", password: "123456" )
-
-  photo_url = photo_urls.pop
 
   Animal.create!(
   user: user,
@@ -50,8 +79,34 @@ puts "Photos loaded, wait for animals creation...."
   dewormed: [true, false].sample,
   special_needed: [true, false].sample,
   location: Faker::Address.city, # You can use city, state, or country based on your needs
-  photo: ActiveStorage::Blob.create_and_upload!(io: URI.open(photo_url), filename: "animal_photo_#{i+1}.jpg", content_type: 'image/jpeg')
+  photos: [
+    ActiveStorage::Blob.create_and_upload!(
+      io: URI.open("https://res.cloudinary.com/datqpbimu/image/upload/v1724789480/sophie_w2pkkq.jpg"),
+      filename: "photo1.jpg",
+      content_type: 'image/jpeg'
+    ),
+    ActiveStorage::Blob.create_and_upload!(
+      io: URI.open("https://res.cloudinary.com/datqpbimu/image/upload/v1724789080/Lion_xaoi5m.jpg"),
+      filename: "photo2.jpg",
+      content_type: 'image/jpeg'
+    ),
+    ActiveStorage::Blob.create_and_upload!(
+      io: URI.open("https://res.cloudinary.com/datqpbimu/image/upload/v1724729730/cat3_emoyue.png"),
+      filename: "photo3.jpg",
+      content_type: 'image/jpeg'
+    ),
+    ActiveStorage::Blob.create_and_upload!(
+      io: URI.open( "https://res.cloudinary.com/datqpbimu/image/upload/v1724738560/tuti_r578mb.jpg"),
+      filename: "photo4.jpg",
+      content_type: 'image/jpeg'
+    )
+  ]
   )
+  puts "#{1+i} created!"
 end
+
+
+
+
 
 puts "Animals created!"
