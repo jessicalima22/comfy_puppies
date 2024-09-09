@@ -2,15 +2,8 @@
   font-size: medium;
   color:  #72190D;
   text-align: center;
-  background-color: white;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  background-color: rgb(241, 12, 12);
   padding-top: 20px;
-}
-
-.custom-padding-top {
-  padding-top: 2rem; /* Adjust the value as needed */
 }
 
 .animal-photo {
@@ -20,16 +13,62 @@
   margin-bottom: 20px;
 }
 
-.container-show .img-fluid {
-  max-width: 100%;
-  height: auto;
-  margin-right: 20px;
-}
-
 .container-show h1, .container-show h2, .container-show p {
   margin-bottom: 15px;
 }
 
+<<<<<<< Updated upstream
 .text-shadow {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+=======
+// carousel
+
+.carousel-show-animals {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.main-img-show {
+  min-height: 363px;
+  max-height: 516px;
+  width: 100%;
+  border-radius: 20px;
+}
+
+.img-carousel-show {
+  min-width: 70px;
+  max-width: 80px;
+  border: 5px solid white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.animal-paw-frame {
+  border: 15px solid transparent;
+  padding: 12px;
+  background-image: url('paw_print_background.jpg');
+  background-repeat: repeat;
+  background-size: 150px 180px;
+  background-origin: border-box;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border: none;
+}
+
+.div-main-img-show {
+  margin-bottom: 2rem;
+}
+
+
+
+.next-button,.prev-button {
+  position: relative;
+  width: 5%;
+}
+
+.prev-icon, .next-icon {
+  width: 15px;
+  height: 15px;
+>>>>>>> Stashed changes
 }
