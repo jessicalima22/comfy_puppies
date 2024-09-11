@@ -3,6 +3,7 @@ import { Controller } from "@hotwired/stimulus"
 // Connects to data-controller="show-carousel"
 export default class extends Controller {
   static targets = ["mainImage", "carouselImage"]
+  static targets = ["mainImage", "carouselImage"]
 
   connect() {
     this.currentIndex = 0
@@ -11,8 +12,6 @@ export default class extends Controller {
   }
 
   updateMainImage() {
-    // Obter a imagem ativa do carrossel
-
     const activeImageDiv = this.carouselImageTargets[this.currentIndex]
     const activeImage = activeImageDiv.querySelector('img')
 
@@ -22,7 +21,6 @@ export default class extends Controller {
 
     // Atualizar a classe de destaque no carrossel
     this.carouselImageTargets.forEach((imageDiv, index) => {
-      console.log("oiiii")
       imageDiv.classList.toggle('active', index === this.currentIndex)
     })
   }
@@ -35,5 +33,22 @@ export default class extends Controller {
   prevImage() {
     this.currentIndex = (this.currentIndex - 1 + this.totalImages) % this.totalImages
     this.updateMainImage()
+  }
+
+  selectImage(event) {
+    console.log("teste")
+    // Encontrar a imagem clicada no carrossel
+    const clickedImage = event.currentTarget.querySelector('img')
+    console.log(clickedImage)
+
+    // Atualizar a imagem principal com a fonte e o alt da imagem clicada
+    this.mainImageTarget.src = clickedImage.src
+    this.mainImageTarget.alt = clickedImage.alt
+
+    // Remover e adicionar a classe 'active' para a imagem clicada
+    this.carouselImageTargets.forEach((imageDiv) => {
+      imageDiv.classList.remove('active')
+    })
+    event.currentTarget.classList.add('active')
   }
 }

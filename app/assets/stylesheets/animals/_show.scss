@@ -2,7 +2,7 @@
   font-size: medium;
   color:  #72190D;
   text-align: center;
-  background-color: rgb(241, 12, 12);
+  background-color: rgb(206, 7, 7);
   padding-top: 20px;
 }
 
@@ -17,10 +17,9 @@
   margin-bottom: 15px;
 }
 
-<<<<<<< Updated upstream
 .text-shadow {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-=======
+}
 // carousel
 
 .carousel-show-animals {
@@ -28,6 +27,15 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+}
+
+.div-photos-carousel {
+
+}
+
+.div-main-img-show {
+  margin: 0 2rem 2rem 2rem;
+  max-width: 80%;
 }
 
 .main-img-show {
@@ -53,14 +61,12 @@
   background-origin: border-box;
   border-radius: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  border: none;
-}
-
-.div-main-img-show {
-  margin-bottom: 2rem;
 }
 
 
+.div-img-carousel-show {
+  cursor: pointer;
+}
 
 .next-button,.prev-button {
   position: relative;
@@ -70,5 +76,4 @@
 .prev-icon, .next-icon {
   width: 15px;
   height: 15px;
->>>>>>> Stashed changes
 }

@@ -1,111 +1,43 @@
-<<<<<<< Updated upstream
-<div class="container-show mt-5 custom-padding-top">
-  <div class="row">
-    <div class="col-sm-12 col-md-6">
-      <% if @animal.photo.attached? %>
-        <!--<%= image_tag @animal.photo, class: "img-fluid", alt: @animal.name %>-->
-        <!--<%= image_tag @animal.photo, class: "img-fluid", alt: @animal.name %>-->
-        <%= cl_image_tag @animal.photo.key, class: "img-fluid", alt: @animal.name, crop: :fill %>
-      <% else %>
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" class="img-fluid" alt="Default Image">
-      <% end %>
-    </div>
-    <div class="col-sm-12 col-md-6 mt-3">
-=======
 <div class="container-show mt-5 padding_navbar container-fluid">
 
+
   <div class="row">
-   <div class="col-12 col-md-6 div-photo-carousel" data-controller="show-carousel">
-  <% if @animal.photos.attached? %>
-    <!-- Div principal que exibirá a imagem ativa -->
-    <div class="animal-paw-frame div-main-img-show">
-      <%= cl_image_tag(@animal.photos.first.key, crop: "fill", gravity: "center", aspect_ratio: "4:3", class: "main-img-show", data: { show_carousel_target: "mainImage" }) %>
-    </div>
-
-    <!-- Carrossel de imagens -->
-    <div class="carousel-show-animals d-flex mt-3">
-      <!-- Controle automático do carrossel previous-->
-      <button class="carousel-control-prev prev-button" type="button" data-bs-target="#carouselExample" data-action="click->show-carousel#prevImage" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-
-      <% @animal.photos.each_with_index do |photo, index| %>
-        <div class="div-img-carousel-show <%= 'active ' if index == 0 %>" data-index="<%= index %>" data-show-carousel-target="carouselImage" >
-          <%= cl_image_tag photo.key, class: 'img-carousel-show', alt: @animal.name, crop: :fill %>
+    <div class="col-12 col-md-6 div-photos-carousel d-flex flex-column align-items-center" data-controller="show-carousel">
+      <h1>Hi, I'm <%= @animal.name %>!</h1>
+      <% if @animal.photos.attached? %>
+        <!-- Div principal que exibirá a imagem ativa -->
+        <div class="animal-paw-frame div-main-img-show">
+          <%= cl_image_tag(@animal.photos.first.key, crop: "fill", gravity: "center", aspect_ratio: "4:3", class: "main-img-show", data: { show_carousel_target: "mainImage" }) %>
         </div>
-      <% end %>
-       <!-- Controle automático do carrossel next-->
 
-      <button class="carousel-control-next next-button" type="button" data-bs-target="#carouselExample" data-action="click->show-carousel#nextImage" data-bs-slide="next">
-        <span class="carousel-control-next-icon next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
+        <!-- Carrossel de imagens -->
+        <div class="carousel-show-animals mt-3">
+          <!-- Controle do carrossel previous -->
+          <button class="carousel-control-prev prev-button" type="button" data-action="click->show-carousel#prevImage">
+            <span class="carousel-control-prev-icon prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
 
-    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <% else %>
-    <%= image_tag('paws-no-photo.jpg', style: "height: 360px;", class: "d-block") %>
-  <% end %>
-</div>
-
-
-      <div class=" d-flex" data-controller="show-carousel m-4">
-
-        <!--<div class="carousel-container">
-          <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner" data-show-carousel-target="inner">
-
-              <div class="carousel-item active" data-bs-interval="10000">
-                <img src="https://res.cloudinary.com/datqpbimu/image/upload/v1724789047/Frederico_czjlos.jpg" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item" data-bs-interval="10000">
-                <img src="https://res.cloudinary.com/datqpbimu/image/upload/v1724789081/Penelope_ormn2y.jpg" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item" data-bs-interval="10000">
-                <img src="https://res.cloudinary.com/datqpbimu/image/upload/v1724738560/tuti_r578mb.jpg" class="d-block w-100" alt="...">
-              </div>
+          <!-- Photos iteration -->
+          <% @animal.photos.each_with_index do |photo, index| %>
+            <div class="div-img-carousel-show <%= 'active ' if index == 0 %>" data-index="<%= index %>" data-show-carousel-target="carouselImage" data-action="click->show-carousel#selectImage">
+              <%= cl_image_tag photo.key, class: 'img-carousel-show', alt: @animal.name, crop: :fill%>
             </div>
+          <% end %>
 
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-          </div>
-          <div class="highlighted-image" >
-            <img src="img" alt="Highlighted" class="img-fluid" data-show-carousel-target="highlightedImage">
-          </div>
-
+          <!-- Controle do carrossel next -->
+          <button class="carousel-control-next next-button" type="button" data-action="click->show-carousel#nextImage">
+            <span class="carousel-control-next-icon next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
         </div>
-
-      </div> -->
-      </div>
+      <% else %>
+        <%= image_tag('paws-no-photo.jpg', style: "height: 360px;", class: "d-block") %>
+      <% end %>
+    </div>
 
 
     <div class="col-12 col-md-6 mt-3">
->>>>>>> Stashed changes
       <h1><strong>Pet's profile</strong></h1>
       <h2>Name: <%= @animal.name %></h2>
       <p>Breed: <%= @animal.breed %></p>
