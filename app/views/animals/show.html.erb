@@ -34,6 +34,53 @@
       <% else %>
         <%= image_tag('paws-no-photo.jpg', style: "height: 360px;", class: "d-block") %>
       <% end %>
+
+
+
+      <div class="carousel-show-animals d-flex" data-controller="show-carousel m-4">
+
+        <!--<div class="carousel-container">
+          <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner" data-show-carousel-target="inner">
+
+              <div class="carousel-item active" data-bs-interval="10000">
+                <img src="https://res.cloudinary.com/datqpbimu/image/upload/v1724789047/Frederico_czjlos.jpg" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item" data-bs-interval="10000">
+                <img src="https://res.cloudinary.com/datqpbimu/image/upload/v1724789081/Penelope_ormn2y.jpg" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item" data-bs-interval="10000">
+                <img src="https://res.cloudinary.com/datqpbimu/image/upload/v1724738560/tuti_r578mb.jpg" class="d-block w-100" alt="...">
+              </div>
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+          <div class="highlighted-image" >
+            <img src="img" alt="Highlighted" class="img-fluid" data-show-carousel-target="highlightedImage">
+          </div>
+
+        </div>
+
+      </div> -->
+
+      <div class="active" data-bs-interval="10000">
+        <img src="https://res.cloudinary.com/datqpbimu/image/upload/v1724789047/Frederico_czjlos.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="active" data-bs-interval="10000">
+        <img src="https://res.cloudinary.com/datqpbimu/image/upload/v1724789081/Penelope_ormn2y.jpg" class="d-block w-100" alt="...">
+      </div>
+      <div class="" data-bs-interval="10000">
+        <img src="https://res.cloudinary.com/datqpbimu/image/upload/v1724738560/tuti_r578mb.jpg" class="d-block w-100" alt="...">
+      </div>
+
     </div>
 
 
@@ -68,8 +115,9 @@
           <%= link_to 'Adopt', new_adoption_path(animal_id: @animal), class: "btn-sm button pulse know_more_button mt-1" %>
         </div>
     </div>
+
   </div>
-</div>
+
 <%# <div id="map" style="width: 100%; height: 500px;"></div> %>
   <% if @markers.count.positive? %>
     <div style="width: 100%; height: 600px;"
