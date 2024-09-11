@@ -37,9 +37,11 @@ class AnimalsController < ApplicationController
     @animal.user = current_user
     authorize @animal
     if @animal.save
-      redirect_to animal_path(@animal)
+      redirect_to animal_path(@animal), notice: 'Animal was successfully created.'
     else
-      render :new
+      # @animal.errors.add(:photos) if params[:animal][:photos].length > 5
+
+      render :new, status: :unprocessable_entity, notice: 'Animal was not created.'
     end
   end
 
@@ -50,7 +52,7 @@ class AnimalsController < ApplicationController
   def update
     authorize @animal
     @animal.update(animal_params)
-    redirect_to animal_path(@animal)
+    redirect_to animal_path(@animal), notice: 'Animal was successfully updated.'
   end
 
   def destroy
@@ -66,7 +68,7 @@ class AnimalsController < ApplicationController
   end
 
   def animal_params
-    params.require(:animal).permit(:name, :breed, :age, :gender, :size, :castrated, :vaccinated, :dewormed, :special_needed, :location, :photo)
+    params.require(:animal).permit(:name, :breed, :age, :gender, :size, :castrated, :vaccinated, :dewormed, :special_needed, :location, photos: [])
   end
 
 end

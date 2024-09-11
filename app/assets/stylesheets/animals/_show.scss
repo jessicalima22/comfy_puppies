@@ -1,4 +1,4 @@
-.container-show{
+.container-show {
   font-size: medium;
   color:  #72190D;
   text-align: center;
@@ -28,6 +28,27 @@
 
 .container-show h1, .container-show h2, .container-show p {
   margin-bottom: 15px;
+}
+
+// carousel
+
+.carousel-container {
+  position: relative;
+}
+
+.highlighted-image {
+  position: absolute;
+  top: -150px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  z-index: 1;
+}
+
+.highlighted-image img {
+  width: 100%;
+  border: 5px solid white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .text-shadow {

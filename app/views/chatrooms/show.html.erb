@@ -1,9 +1,10 @@
-<div class="container chatroom"
+<div class="container chatroom padding_navbar"
   data-controller="chatroom"
   data-chatroom-chatroom-id-value="<%= @chatroom.id %>"
   data-chatroom-current-user-id-value="<%= current_user.id %>">
 
-  <h1>#<%= @chatroom.name %></h1>
+  <h1># <%= @chatroom.name %></h1>
+  <p># <%= @chatroom.animal.id %></p>
 
   <div id="messages" data-chatroom-target="messages">
     <% @chatroom.messages.each do |message| %>

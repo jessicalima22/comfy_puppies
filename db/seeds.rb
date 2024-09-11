@@ -267,8 +267,6 @@ Animal.create!(
     )
   ]
 )
-Novo
-19h28
 
 puts "8 - Jack created..."
 
