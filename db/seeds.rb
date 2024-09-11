@@ -316,6 +316,7 @@ Animal.create!(
       filename: "fluffy_photo1.jpg",
       content_type: 'image/jpeg'
     ),
+    
     ActiveStorage::Blob.create_and_upload!(
       io: URI.open("https://res.cloudinary.com/dsoletyk5/image/upload/v1725717698/pete-f-GpLEzl4OthA-unsplash_xzc2tv.jpg"),
       filename: "fluffy_photo2.jpg",
