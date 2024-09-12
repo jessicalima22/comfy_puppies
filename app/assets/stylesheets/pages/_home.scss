@@ -178,7 +178,7 @@ p.text-carousel {
 }
 
 .div-home-cards {
-  padding: 3% 2%;
+  padding: 3rem 2rem;
 }
 
 //.card-home {
@@ -197,6 +197,9 @@ p.text-carousel {
   // object-fit: fill;
 }
 
+.card-home {
+  max-width: 500px;
+}
 
 
 //breakpoint tablet ----------------------------------------------------------------------------
