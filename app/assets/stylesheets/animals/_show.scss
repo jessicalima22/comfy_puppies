@@ -1,16 +1,12 @@
+.h1-show {
+  font-size: 30px;
+}
+
 .container-show {
   font-size: medium;
   color:  #72190D;
   text-align: center;
   background-color: white;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-top: 20px;
-}
-
-.custom-padding-top {
-  padding-top: 2rem; /* Adjust the value as needed */
 }
 
 .animal-photo {
@@ -18,12 +14,6 @@
   height: auto;
   border-radius: 8px;
   margin-bottom: 20px;
-}
-
-.container-show .img-fluid {
-  max-width: 100%;
-  height: auto;
-  margin-right: 20px;
 }
 
 .container-show h1, .container-show h2, .container-show p {
@@ -53,4 +43,113 @@
 
 .text-shadow {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.carousel-show-animals {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.div-main-img-show {
+  margin-bottom: 2rem;
+  max-width: 88%;
+}
+
+.main-img-show {
+  //min-height: 350px;
+  //max-height: 516px;
+  width: 100%;
+  max-width: 360px;
+  border-radius: 20px;
+}
+
+.img-carousel-show {
+  width: 95%;
+  border: 5px solid white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+//set class according to number of images
+.one-photo {
+  max-width: 30%;
+}
+
+.two-photos {
+  max-width: 30%;
+}
+
+.three-photos {
+  max-width: 27%;
+}
+
+.four-photos {
+  max-width: 25%;
+}
+
+.animal-paw-frame {
+  border: 15px solid transparent;
+  padding: 12px;
+  background-image: url('paw_print_background.jpg');
+  background-repeat: repeat;
+  background-size: 150px 180px;
+  background-origin: border-box;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.div-img-carousel-show {
+  cursor: pointer;
+}
+
+.next-button,.prev-button {
+  position: relative;
+  width: 5%;
+}
+
+.prev-icon, .next-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.prev-icon {
+  background-image: url('back-arrow-black.png');
+}
+
+.next-icon {
+  background-image: url('caret-right-black.png')
+}
+
+.map-show {
+  width: 95%;
+  height: 600px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+//breakpoint tablet ----------------------------------------------------------------------------
+
+@media (min-width: $breakpoint-tablet) {
+  .main-img-show {
+    max-height: 300px;
+  }
+
+  .img-carousel-show {
+    max-width: 70%;
+  }
+}
+
+//breakpoint desktop -------------------------------------------------------------------------------------
+
+@media (min-width: $breakpoint-desktop) {
+  .main-img-show {
+    //max-height: 320px;
+  }
+
+  .img-carousel-show {
+    max-width: 60%;
+    max-height: 250px;
+  }
 }

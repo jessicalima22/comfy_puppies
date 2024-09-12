@@ -1,67 +1,57 @@
-<div class="container-show mt-5 custom-padding-top container-fluid">
+<div class="container-show padding_navbar container-fluid pb-3 mt-3">
 
-  <div class="row">
-    <div class="col-12 col-md-6">
+
+  <div class="row px-md-5 mx-md-3 mx-xl-5">
+    <div class="col-12 col-md-7 col-lg-6 div-photos-carousel d-flex flex-column align-items-center px-md-0" data-controller="show-carousel">
+      <h1 class ="h1-show">Hi, I´m <%= @animal.name %>!</h1>
       <% if @animal.photos.attached? %>
-        <% @animal.photos.each do |photo| %>
-          <%= cl_image_tag photo.key, class: 'img-fluid', alt: @animal.name, crop: :fill %>
-        <% end %>
-
-      <% else %>
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" class="img-fluid" alt="Default Image">
-      <% end %>
-
-
-
-      <div class="carousel-show-animals d-flex" data-controller="show-carousel m-4">
-
-        <!--<div class="carousel-container">
-          <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner" data-show-carousel-target="inner">
-
-              <div class="carousel-item active" data-bs-interval="10000">
-                <img src="https://res.cloudinary.com/datqpbimu/image/upload/v1724789047/Frederico_czjlos.jpg" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item" data-bs-interval="10000">
-                <img src="https://res.cloudinary.com/datqpbimu/image/upload/v1724789081/Penelope_ormn2y.jpg" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item" data-bs-interval="10000">
-                <img src="https://res.cloudinary.com/datqpbimu/image/upload/v1724738560/tuti_r578mb.jpg" class="d-block w-100" alt="...">
-              </div>
-            </div>
-
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-          </div>
-          <div class="highlighted-image" >
-            <img src="img" alt="Highlighted" class="img-fluid" data-show-carousel-target="highlightedImage">
-          </div>
-
+        <!-- Div principal que exibirá a imagem ativa -->
+        <div class="animal-paw-frame div-main-img-show">
+          <%= cl_image_tag(@animal.photos.first.key, crop: "fill", gravity: "center", class: "main-img-show", data: { show_carousel_target: "mainImage" }) %>
         </div>
 
-      </div> -->
+        <!-- Carousel -->
+        <div class="carousel-show-animals mt-3">
+          <!-- Control previous -->
+          <button class="carousel-control-prev prev-button" type="button" data-action="click->show-carousel#prevImage">
+            <span class="carousel-control-prev-icon prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
 
-      <div class="active" data-bs-interval="10000">
-        <img src="https://res.cloudinary.com/datqpbimu/image/upload/v1724789047/Frederico_czjlos.jpg" class="d-block w-100" alt="...">
-      </div>
-      <div class="active" data-bs-interval="10000">
-        <img src="https://res.cloudinary.com/datqpbimu/image/upload/v1724789081/Penelope_ormn2y.jpg" class="d-block w-100" alt="...">
-      </div>
-      <div class="" data-bs-interval="10000">
-        <img src="https://res.cloudinary.com/datqpbimu/image/upload/v1724738560/tuti_r578mb.jpg" class="d-block w-100" alt="...">
-      </div>
+          <!-- Photos iteration -->
+          <% num_photos = @animal.photos.length %>
+          <% @animal.photos.each_with_index do |photo, index| %>
+            <% div_class = case num_photos
+              when 1
+                'one-photo'    # Classe para uma foto
+              when 2
+                'two-photos'   # Classe para duas fotos
+              when 3
+                'three-photos' # Classe para três fotos
+              else
+                'four-photos'  # Classe para quatro ou mais fotos
+            end %>
+
+            <div class="div-img-carousel-show <%= div_class %> <%= 'active ' if index == 0 %>" data-index="<%= index %>" data-show-carousel-target="carouselImage" data-action="click->show-carousel#selectImage">
+              <%= cl_image_tag photo.key, class: "img-carousel-show", alt: @animal.name, crop: :fill %>
+            </div>
+          <% end %>
+
+          <!-- Control next -->
+          <button class="carousel-control-next next-button" type="button" data-action="click->show-carousel#nextImage">
+            <span class="carousel-control-next-icon next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+
+      <% else %>
+        <%= image_tag('paws-no-photo.jpg', style: "height: 360px;", class: "d-block") %>
+      <% end %>
 
     </div>
 
-
-    <div class="col-12 col-md-6 ">
-      <h1><strong>Pet's profile</strong></h1>
+    <div class="col-12 col-md-5 col-lg-6 mt-3">
+      <h1 class ="h1-show"><strong>Pet's profile</strong></h1>
       <h2>Name: <%= @animal.name %></h2>
       <p>Breed: <%= @animal.breed %></p>
       <p>Size: <%= @animal.size %></p>
@@ -71,34 +61,49 @@
       <p>Dewormed: <%= @animal.dewormed %></p>
       <p>Vaccinated: <%= @animal.vaccinated %></p>
       <p>Special Needed: <%= @animal.special_needed %></p>
-      <p>Location:<%= @animal.location %></p>
-      <p><strong>Created by:</strong> <%= @animal.user.email %></p>
+      <p>Location: <%= @animal.location %></p>
+      <% if current_user != @animal.user%>
+        <p><strong> My tutor is:</strong> <%= @animal.user.email %></p>
+      <% else %>
+        <p><strong> I am the tutor!</strong></p>
+      <% end %>
 
-        <div class="text-center mt-4">
-          <div class="d-inline-flex justify-content-center">
-            <% if policy(@animal).destroy? %>
-             <%= link_to "Delete", animal_path(@animal), class: "btn button pulse know_more_button mx-2", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
-            <% end %>
-            <% if policy(@animal).edit? %>
-              <%= link_to 'Edit', edit_animal_path(@animal), class: "btn button pulse know_more_button mx-2" %>
-            <% end %>
-          </div>
+      <div class="text-center mt-4">
+        <div class="d-inline-flex justify-content-center mb-4">
+          <% if policy(@animal).destroy? %>
+            <%= link_to "Delete", animal_path(@animal), class: "btn button pulse know_more_button mx-2", data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+          <% end %>
+          <% if policy(@animal).edit? %>
+            <%= link_to 'Edit', edit_animal_path(@animal), class: "btn button pulse know_more_button mx-2" %>
+          <% end %>
         </div>
+      </div>
 
-        <div class="text-center mt-4 d-flex flex-column align-items-center">
-          <%= link_to 'Back', animals_path, class: "btn button pulse know_more_button mb-3" %>
+      <% if current_user != @animal.user%>
+        <div class="text-center d-flex flex-column align-items-center">
           <p class="text-center"><strong>Want to adopt me? Talk to my tutor!</strong></p>
-          <%= link_to 'Adopt', new_adoption_path(animal_id: @animal), class: "btn-sm button pulse know_more_button mt-1" %>
+          <%= link_to 'Adopt!', new_adoption_path(animal_id: @animal), class: "btn-sm button pulse know_more_button mt-1" %>
+          <%= link_to 'Back', animals_path, class: "btn button pulse know_more_button mb-3 back" %>
         </div>
+      <% else %>
+        <div class="text-center mt-4 d-flex flex-column align-items-center">
+          <%= link_to 'Back', animals_path, class: "btn button pulse know_more_button mb-3 back" %>
+        </div>
+      <% end %>
+
     </div>
+
 
   </div>
 
 <%# <div id="map" style="width: 100%; height: 500px;"></div> %>
-<% if @markers.count.positive? %>
- <div style="width: 100%; height: 600px;"
-    data-controller="map"
-    data-map-markers-value="<%= @markers.to_json %>"
-    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-</div>
-<% end %>
+  <% if @markers.count.positive? %>
+    <p>You can pick me up at....</p>
+    <div class="map-show mx-auto"
+        data-controller="map"
+        data-map-markers-value="<%= @markers.to_json %>"
+        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+  <% end %>
+
+<div>

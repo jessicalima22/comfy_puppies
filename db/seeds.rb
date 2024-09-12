@@ -27,7 +27,7 @@ user5 = User.create!(email: "john@gmail.com", password: "123456" )
 user6 = User.create!(email: "susan@gmail.com", password: "123456" )
 user7 = User.create!(email: "mike@gmail.com", password: "123456" )
 
-puts "users created, wait for 14 animals creation...."
+puts "users created, wait for 21 animals creation...."
 
 users = User.all.to_a
 
@@ -438,4 +438,202 @@ Animal.create!(
 
 puts "14 - Oscar created..."
 
-puts "Animals created!"
+Animal.create!(
+  user: users.sample,
+  name: "Molly",
+  breed: "Cocker Spaniel",
+  age: "3 years",
+  gender: "Female",
+  size: "Medium",
+  castrated: false,
+  vaccinated: true,
+  dewormed: true,
+  special_needed: false,
+  location: "San Diego",
+  photos: [
+    ActiveStorage::Blob.create_and_upload!(
+      io: URI.open("https://example.com/photo19.jpg"),
+      filename: "molly_photo1.jpg",
+      content_type: 'image/jpeg'
+    ),
+    ActiveStorage::Blob.create_and_upload!(
+      io: URI.open("https://example.com/photo20.jpg"),
+      filename: "molly_photo2.jpg",
+      content_type: 'image/jpeg'
+    )
+  ]
+)
+
+puts "15 - Molly created..."
+
+Animal.create!(
+  user: users.sample,
+  name: "Zeus",
+  breed: "Great Dane",
+  age: "6 years",
+  gender: "Male",
+  size: "Large",
+  castrated: true,
+  vaccinated: true,
+  dewormed: true,
+  special_needed: false,
+  location: "Austin",
+  photos: [
+    ActiveStorage::Blob.create_and_upload!(
+      io: URI.open("https://example.com/photo21.jpg"),
+      filename: "zeus_photo1.jpg",
+      content_type: 'image/jpeg'
+    ),
+    ActiveStorage::Blob.create_and_upload!(
+      io: URI.open("https://example.com/photo22.jpg"),
+      filename: "zeus_photo2.jpg",
+      content_type: 'image/jpeg'
+    )
+  ]
+)
+
+puts "16 - Zeus created..."
+
+Animal.create!(
+  user: users.sample,
+  name: "Roxy",
+  breed: "Dachshund",
+  age: "2 years",
+  gender: "Female",
+  size: "Small",
+  castrated: true,
+  vaccinated: true,
+  dewormed: true,
+  special_needed: false,
+  location: "Seattle",
+  photos: [
+    ActiveStorage::Blob.create_and_upload!(
+      io: URI.open("https://example.com/photo23.jpg"),
+      filename: "roxy_photo1.jpg",
+      content_type: 'image/jpeg'
+    ),
+    ActiveStorage::Blob.create_and_upload!(
+      io: URI.open("https://example.com/photo24.jpg"),
+      filename: "roxy_photo2.jpg",
+      content_type: 'image/jpeg'
+    )
+  ]
+)
+
+puts "17 - Roxy created..."
+
+Animal.create!(
+  user: users.sample,
+  name: "Buster",
+  breed: "Border Collie",
+  age: "3 years",
+  gender: "Male",
+  size: "Medium",
+  castrated: true,
+  vaccinated: true,
+  dewormed: true,
+  special_needed: false,
+  location: "Denver",
+  photos: [
+    ActiveStorage::Blob.create_and_upload!(
+      io: URI.open("https://example.com/photo25.jpg"),
+      filename: "buster_photo1.jpg",
+      content_type: 'image/jpeg'
+    ),
+    ActiveStorage::Blob.create_and_upload!(
+      io: URI.open("https://example.com/photo26.jpg"),
+      filename: "buster_photo2.jpg",
+      content_type: 'image/jpeg'
+    )
+  ]
+)
+
+puts "18 - Buster created..."
+
+Animal.create!(
+  user: users.sample,
+  name: "Maggie",
+  breed: "French Bulldog",
+  age: "2 years",
+  gender: "Female",
+  size: "Small",
+  castrated: false,
+  vaccinated: true,
+  dewormed: true,
+  special_needed: false,
+  location: "Portland",
+  photos: [
+    ActiveStorage::Blob.create_and_upload!(
+      io: URI.open("https://example.com/photo27.jpg"),
+      filename: "maggie_photo1.jpg",
+      content_type: 'image/jpeg'
+    ),
+    ActiveStorage::Blob.create_and_upload!(
+      io: URI.open("https://example.com/photo28.jpg"),
+      filename: "maggie_photo2.jpg",
+      content_type: 'image/jpeg'
+    )
+  ]
+)
+
+puts "19 - Maggie created...",
+
+Animal.create!(
+  user: users.sample,
+  name: "Shadow",
+  breed: "Husky",
+  age: "4 years",
+  gender: "Male",
+  size: "Large",
+  castrated: true,
+  vaccinated: true,
+  dewormed: true,
+  special_needed: true,
+  location: "Miami",
+  photos: [
+    ActiveStorage::Blob.create_and_upload!(
+      io: URI.open("https://example.com/photo29.jpg"),
+      filename: "shadow_photo1.jpg",
+      content_type: 'image/jpeg'
+    ),
+    ActiveStorage::Blob.create_and_upload!(
+      io: URI.open("https://example.com/photo30.jpg"),
+      filename: "shadow_photo2.jpg",
+      content_type: 'image/jpeg'
+    )
+  ]
+)
+
+  puts "20 - Shadow created..."
+
+Animal.create!(
+  user: users.sample,
+  name: "Luna",
+  breed: "Shih Tzu",
+  age: "2 years",
+  gender: "Female",
+  size: "Small",
+  castrated: true,
+  vaccinated: true,
+  dewormed: true,
+  special_needed: false,
+  location: "San Antonio",
+  photos: [
+    ActiveStorage::Blob.create_and_upload!(
+      io: URI.open("https://example.com/photo15.jpg"),
+      filename: "luna_photo1.jpg",
+      content_type: 'image/jpeg'
+    ),
+    ActiveStorage::Blob.create_and_upload!(
+      io: URI.open("https://example.com/photo16.jpg"),
+      filename: "luna_photo2.jpg",
+      content_type: 'image/jpeg'
+    )
+  ]
+)
+
+puts "21 - Luna created..."
+
+
+
+puts "All Animals created!"

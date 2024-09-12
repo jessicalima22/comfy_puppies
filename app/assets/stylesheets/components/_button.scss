@@ -84,6 +84,7 @@
   transform: translateY(-5px);
   box-shadow: 0 0 15px #ff634780;
   background-color: #65190f;
+  color: white;
 }
 
 .container-show {
@@ -167,6 +168,10 @@
   background-color: #E55B50; /* Darken the button on hover */
 }
 
+.back {
+  width: auto;
+}
+
 // Tablet adaptation
 @media (min-width: $breakpoint-tablet) {
   .button {
@@ -191,4 +196,8 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
   }
 
+  .back {
+    width: auto;
+    height: 36px;
+  }
 }
