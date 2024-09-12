@@ -3,11 +3,11 @@
 
   <div class="row">
     <div class="col-12 col-md-6 div-photos-carousel d-flex flex-column align-items-center" data-controller="show-carousel">
-      <h1>Hi, I'm <%= @animal.name %>!</h1>
+      <h1 class ="h1-show">Hi, I´m <%= @animal.name %>!</h1>
       <% if @animal.photos.attached? %>
         <!-- Div principal que exibirá a imagem ativa -->
         <div class="animal-paw-frame div-main-img-show">
-          <%= cl_image_tag(@animal.photos.first.key, crop: "fill", gravity: "center", aspect_ratio: "4:3", class: "main-img-show", data: { show_carousel_target: "mainImage" }) %>
+          <%= cl_image_tag(@animal.photos.first.key, crop: "fill", gravity: "center", class: "main-img-show", data: { show_carousel_target: "mainImage" }) %>
         </div>
 
         <!-- Carrossel de imagens -->
@@ -31,61 +31,15 @@
             <span class="visually-hidden">Next</span>
           </button>
         </div>
+
       <% else %>
         <%= image_tag('paws-no-photo.jpg', style: "height: 360px;", class: "d-block") %>
       <% end %>
 
-
-
-      <div class="carousel-show-animals d-flex" data-controller="show-carousel m-4">
-
-        <!--<div class="carousel-container">
-          <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner" data-show-carousel-target="inner">
-
-              <div class="carousel-item active" data-bs-interval="10000">
-                <img src="https://res.cloudinary.com/datqpbimu/image/upload/v1724789047/Frederico_czjlos.jpg" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item" data-bs-interval="10000">
-                <img src="https://res.cloudinary.com/datqpbimu/image/upload/v1724789081/Penelope_ormn2y.jpg" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item" data-bs-interval="10000">
-                <img src="https://res.cloudinary.com/datqpbimu/image/upload/v1724738560/tuti_r578mb.jpg" class="d-block w-100" alt="...">
-              </div>
-            </div>
-
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-          </div>
-          <div class="highlighted-image" >
-            <img src="img" alt="Highlighted" class="img-fluid" data-show-carousel-target="highlightedImage">
-          </div>
-
-        </div>
-
-      </div> -->
-
-      <div class="active" data-bs-interval="10000">
-        <img src="https://res.cloudinary.com/datqpbimu/image/upload/v1724789047/Frederico_czjlos.jpg" class="d-block w-100" alt="...">
-      </div>
-      <div class="active" data-bs-interval="10000">
-        <img src="https://res.cloudinary.com/datqpbimu/image/upload/v1724789081/Penelope_ormn2y.jpg" class="d-block w-100" alt="...">
-      </div>
-      <div class="" data-bs-interval="10000">
-        <img src="https://res.cloudinary.com/datqpbimu/image/upload/v1724738560/tuti_r578mb.jpg" class="d-block w-100" alt="...">
-      </div>
-
     </div>
 
-
     <div class="col-12 col-md-6 mt-3">
-      <h1><strong>Pet's profile</strong></h1>
+      <h1 class ="h1-show"><strong>Pet's profile</strong></h1>
       <h2>Name: <%= @animal.name %></h2>
       <p>Breed: <%= @animal.breed %></p>
       <p>Size: <%= @animal.size %></p>
@@ -116,6 +70,7 @@
         </div>
     </div>
 
+
   </div>
 
 <%# <div id="map" style="width: 100%; height: 500px;"></div> %>
@@ -126,4 +81,5 @@
         data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
   <% end %>
+
 <div>
