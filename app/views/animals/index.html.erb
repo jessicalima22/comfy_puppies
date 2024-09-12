@@ -75,7 +75,7 @@
               <%= link_to animal_path(animal), class: "content_link text-decoration-none" do %>
                 <div class="card text-dark card-has-bg click-col">
                   <% if animal.photos.attached? %>
-                    <%= cl_image_tag(animal.photos.first.key, crop: "fill", gravity: "center", aspect_ratio: "9:16", class: "card_img_index") %>
+                    <%= cl_image_tag(animal.photos.first.key, crop: "fill", gravity: "center", aspect_ratio: "3:4", class: "card_img_index") %>
                   <% else %>
                     <div class="d-flex justify-content-center align-items-center" style="height: 450px;">
                       <%= image_tag('paws-no-photo.jpg', style: "min-heigth: 360px;", class: "d-block") %>

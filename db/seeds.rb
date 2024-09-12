@@ -564,7 +564,7 @@ Animal.create!(
   location: "Portland",
   photos: [
     ActiveStorage::Blob.create_and_upload!(
-      io: URI.open("https://res.cloudinary.com/dsoletyk5/image/upload/v1726155797/karsten-winegeart-4OprnvM9UQs-unsplash_djnunu.jpg"),
+      io: URI.open("https://res.cloudinary.com/datqpbimu/image/upload/v1726173082/maggie1_rkxsjz_c_crop_w_3375_h_6000_ar_9_16_g_auto_gkcndx.jpg"),
       filename: "maggie_photo1.jpg",
       content_type: 'image/jpeg'
     ),
