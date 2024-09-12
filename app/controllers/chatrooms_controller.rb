@@ -22,7 +22,8 @@ class ChatroomsController < ApplicationController
     @chatroom = Chatroom.new(chatroom_params)
     @chatroom.animal = @animal
     authorize @chatroom
-    if @chatroom.save!
+    if @chatroom.save
+      @chatroom.messages.create(user: current_user, content: "Hello! I'm interested in adopting #{@animal.name}.")
       redirect_to animal_chatroom_path(@animal, @chatroom)
     else
       render :new
