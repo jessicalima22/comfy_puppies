@@ -1,10 +1,10 @@
-<div class="container padding_navbar">
-  <h1>chatrooms</h1>
-  <ul>
+<div class="padding_navbar index-chatroom">
+  <h1 class="h1-chatrooms">My chats</h1>
+  <ul class="chatrooms-list">
     <% @chatrooms.each do |chatroom| %>
-      <li><%= link_to chatroom.name, animal_chatroom_path(@animal, chatroom) %></li>
+      <li class="custom-list-chat"><%= link_to chatroom.name, animal_chatroom_path(@animal, chatroom) %></li>
     <% end %>
   </ul>
 
-  <%= link_to 'New Chatroom', new_animal_chatroom_path(@animal), class: "btn btn-secondary" %>
+  <!-- <%= link_to 'New Chatroom', new_animal_chatroom_path(@animal), class: "btn btn-secondary" %> -->
 </div>

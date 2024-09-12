@@ -1,0 +1,33 @@
+.index-chatroom {
+  background-color: $azul-comfy;
+  color: white;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  height: 100vh;
+  font-size: 2rem;
+}
+
+.h1-chatrooms {
+  margin-top: 1rem;
+}
+
+.chatrooms-list {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 1rem 0;
+}
+
+.custom-list-chat {
+  background: url('footsteps.png') no-repeat left center; /* Substitua pelo caminho da sua imagem */
+  padding-left: 30px; /* Ajuste o padding para dar espaço para a imagem */
+  margin-bottom: 10px; /* Espaçamento entre os itens, ajuste conforme necessário */
+  background-size: 25px 25px;
+  font-size: 1rem;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.custom-list-chat:hover {
+  animation: pulse 0.6s ease-in-out infinite;
+  transform: translateY(-5px);
+}
