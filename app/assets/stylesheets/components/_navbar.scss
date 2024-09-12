@@ -24,6 +24,10 @@
 
 //for comfy
 
+.navbar-intern {
+  height: 42px;
+}
+
 .avatar2 {
   width: 35px; //comfy mobile
 }
@@ -118,10 +122,10 @@ button.navbar-toggler.collapsed {
   }
 }
 
-//breakpoint tablet
+//breakpoint tablet ----------------------------------------------------------------------
 @media (min-width: $breakpoint-tablet) {
   .navbar.navbar-expand-sm.navbar-light.navbar-lewagon {
-    height: auto;
+    //height: auto;
   }
 
   a.nav-link {
@@ -153,17 +157,18 @@ button.navbar-toggler.collapsed {
   }
 }
 
+// breakpoint-desktop -----------------------------------------------------------------------
 @media (min-width: $breakpoint-desktop) {
-  .navbar.navbar-expand-sm.navbar-light.navbar-lewagon {
-    height: 60px;
-  }
+  //.navbar.navbar-expand-sm.navbar-light.navbar-lewagon {
+    //height: 60px;
+  //}
 
   .navbar-lewagon .navbar-brand img {
-    width: 80px;
+    width: 70px;
   }
 
   .avatar2 {
-    width: 45px; //default
+    //width: 45px; //default
   }
 
   a.nav-link {

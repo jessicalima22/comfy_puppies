@@ -7,7 +7,6 @@
   color:  #72190D;
   text-align: center;
   background-color: white;
-  padding-top: 20px;
 }
 
 .animal-photo {
@@ -54,7 +53,6 @@
   margin-bottom: 1.5rem;
 }
 
-
 .div-main-img-show {
   margin-bottom: 2rem;
   max-width: 88%;
@@ -69,10 +67,26 @@
 }
 
 .img-carousel-show {
-  min-width: 70px;
-  max-width: 93px;
+  width: 95%;
   border: 5px solid white;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+//set class according to number of images
+.one-photo {
+  max-width: 30%;
+}
+
+.two-photos {
+  max-width: 30%;
+}
+
+.three-photos {
+  max-width: 27%;
+}
+
+.four-photos {
+  max-width: 25%;
 }
 
 .animal-paw-frame {
@@ -115,5 +129,27 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+//breakpoint tablet ----------------------------------------------------------------------------
+
 @media (min-width: $breakpoint-tablet) {
+  .main-img-show {
+    max-height: 300px;
+  }
+
+  .img-carousel-show {
+    max-width: 70%;
+  }
+}
+
+//breakpoint desktop -------------------------------------------------------------------------------------
+
+@media (min-width: $breakpoint-desktop) {
+  .main-img-show {
+    //max-height: 320px;
+  }
+
+  .img-carousel-show {
+    max-width: 60%;
+    max-height: 250px;
+  }
 }

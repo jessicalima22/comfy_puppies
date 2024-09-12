@@ -1,8 +1,8 @@
-<div class="container-show mt-5 padding_navbar container-fluid">
+<div class="container-show padding_navbar container-fluid pb-3 mt-3">
 
 
-  <div class="row">
-    <div class="col-12 col-md-7 div-photos-carousel d-flex flex-column align-items-center px-md-0" data-controller="show-carousel">
+  <div class="row px-md-5 mx-md-3 mx-xl-5">
+    <div class="col-12 col-md-7 col-lg-6 div-photos-carousel d-flex flex-column align-items-center px-md-0" data-controller="show-carousel">
       <h1 class ="h1-show">Hi, I´m <%= @animal.name %>!</h1>
       <% if @animal.photos.attached? %>
         <!-- Div principal que exibirá a imagem ativa -->
@@ -10,22 +10,34 @@
           <%= cl_image_tag(@animal.photos.first.key, crop: "fill", gravity: "center", class: "main-img-show", data: { show_carousel_target: "mainImage" }) %>
         </div>
 
-        <!-- Carrossel de imagens -->
+        <!-- Carousel -->
         <div class="carousel-show-animals mt-3">
-          <!-- Controle do carrossel previous -->
+          <!-- Control previous -->
           <button class="carousel-control-prev prev-button" type="button" data-action="click->show-carousel#prevImage">
             <span class="carousel-control-prev-icon prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
           </button>
 
           <!-- Photos iteration -->
+          <% num_photos = @animal.photos.length %>
           <% @animal.photos.each_with_index do |photo, index| %>
-            <div class="div-img-carousel-show <%= 'active ' if index == 0 %>" data-index="<%= index %>" data-show-carousel-target="carouselImage" data-action="click->show-carousel#selectImage">
-              <%= cl_image_tag photo.key, class: 'img-carousel-show', alt: @animal.name, crop: :fill%>
+            <% div_class = case num_photos
+              when 1
+                'one-photo'    # Classe para uma foto
+              when 2
+                'two-photos'   # Classe para duas fotos
+              when 3
+                'three-photos' # Classe para três fotos
+              else
+                'four-photos'  # Classe para quatro ou mais fotos
+            end %>
+
+            <div class="div-img-carousel-show <%= div_class %> <%= 'active ' if index == 0 %>" data-index="<%= index %>" data-show-carousel-target="carouselImage" data-action="click->show-carousel#selectImage">
+              <%= cl_image_tag photo.key, class: "img-carousel-show", alt: @animal.name, crop: :fill %>
             </div>
           <% end %>
 
-          <!-- Controle do carrossel next -->
+          <!-- Control next -->
           <button class="carousel-control-next next-button" type="button" data-action="click->show-carousel#nextImage">
             <span class="carousel-control-next-icon next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
@@ -38,7 +50,7 @@
 
     </div>
 
-    <div class="col-12 col-md-5 mt-3">
+    <div class="col-12 col-md-5 col-lg-6 mt-3">
       <h1 class ="h1-show"><strong>Pet's profile</strong></h1>
       <h2>Name: <%= @animal.name %></h2>
       <p>Breed: <%= @animal.breed %></p>
@@ -50,7 +62,11 @@
       <p>Vaccinated: <%= @animal.vaccinated %></p>
       <p>Special Needed: <%= @animal.special_needed %></p>
       <p>Location: <%= @animal.location %></p>
-      <p><strong>Created by:</strong> <%= @animal.user.email %></p>
+      <% if current_user != @animal.user%>
+        <p><strong> My tutor is:</strong> <%= @animal.user.email %></p>
+      <% else %>
+        <p><strong> I am the tutor!</strong></p>
+      <% end %>
 
       <div class="text-center mt-4">
         <div class="d-inline-flex justify-content-center mb-4">
@@ -67,11 +83,11 @@
         <div class="text-center d-flex flex-column align-items-center">
           <p class="text-center"><strong>Want to adopt me? Talk to my tutor!</strong></p>
           <%= link_to 'Adopt!', new_adoption_path(animal_id: @animal), class: "btn-sm button pulse know_more_button mt-1" %>
-          <%= link_to 'Back', animals_path, class: "btn button pulse know_more_button mb-3 w-auto" %>
+          <%= link_to 'Back', animals_path, class: "btn button pulse know_more_button mb-3 back" %>
         </div>
       <% else %>
         <div class="text-center mt-4 d-flex flex-column align-items-center">
-          <%= link_to 'Back', animals_path, class: "btn button pulse know_more_button mb-3 w-auto" %>
+          <%= link_to 'Back', animals_path, class: "btn button pulse know_more_button mb-3 back" %>
         </div>
       <% end %>
 
