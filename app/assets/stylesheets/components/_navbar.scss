@@ -24,6 +24,10 @@
 
 //for comfy
 
+.navbar-intern {
+  height: 42px;
+}
+
 .avatar2 {
   width: 35px; //comfy mobile
 }
@@ -81,7 +85,7 @@ a.dropdown-item {
 }
 
 button.navbar-toggler {
-  color:#65190f;
+  color:black;
   border: 1px solid #65190f9c;
   padding: 0.15rem 0.3rem 0.05rem 0.3rem;
   --bs-navbar-toggler-focus-width: 0.1rem;
@@ -101,11 +105,16 @@ button.navbar-toggler.collapsed {
   --bs-navbar-toggler-icon-bg: url("menu.png");
 }
 
-
-//breakpoint avatar
-@media (min-width: 576px) {
-
+.user-navbar {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #72190D;
+  padding: 0 0.5rem;
+  p {
+    margin-bottom: 0;
+  }
 }
+
 
 @media (max-width: 575px) {
   ul.navbar-nav.me-auto {
@@ -116,12 +125,14 @@ button.navbar-toggler.collapsed {
     right: 5px;
     border-radius: 0 0 5px 5px;
   }
+
+
 }
 
-//breakpoint tablet
+//breakpoint tablet ----------------------------------------------------------------------
 @media (min-width: $breakpoint-tablet) {
   .navbar.navbar-expand-sm.navbar-light.navbar-lewagon {
-    height: auto;
+    //height: auto;
   }
 
   a.nav-link {
@@ -132,8 +143,13 @@ button.navbar-toggler.collapsed {
     width: 70px; //default
   }
 
+  .avatar {
+    margin-left: 0.2rem;
+  }
+
   .avatar2 {
     width: 40px; //default
+    padding-top: 0.2rem;
   }
 
   .dropdown-menu.dropdown-menu-end.navbar-nav\.me-auto.show {
@@ -149,29 +165,27 @@ button.navbar-toggler.collapsed {
   }
 
   .dropdown-menu.dropdown-menu-end.navbar-nav\.me-auto.show {
-    --bs-dropdown-spacer: 0.4rem;
+    --bs-dropdown-spacer: 0.28rem;
   }
 }
 
+// breakpoint-desktop -----------------------------------------------------------------------
 @media (min-width: $breakpoint-desktop) {
-  .navbar.navbar-expand-sm.navbar-light.navbar-lewagon {
-    height: 60px;
-  }
+  //.navbar.navbar-expand-sm.navbar-light.navbar-lewagon {
+    //height: 60px;
+  //}
 
   .navbar-lewagon .navbar-brand img {
-    width: 80px;
+    width: 70px;
   }
 
   .avatar2 {
-    width: 45px; //default
+    //width: 45px; //default
   }
 
-  a.nav-link {
+  a.nav-link, .user-navbar{
     font-size: 0.9rem;
     margin-right: 10px;
   }
 
-  .dropdown-menu.dropdown-menu-end.navbar-nav\.me-auto.show {
-    --bs-dropdown-spacer: 0.6rem;
-  }
 }
