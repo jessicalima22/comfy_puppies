@@ -147,6 +147,48 @@ p.text-carousel {
 }
 //Reasons section Mobile
 
+//last session
+
+.home-cards-section {
+  background-color:  $azul-comfy;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title-home-cards-section {
+  margin-top: 1rem;
+  text-align: center;
+  color: white;
+  font-size: 4em;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.p-home-cards-section {
+  font-size: 1.7em;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.div-home-cards {
+  padding: 3% 2%;
+}
+
+//.card-home {
+  //min-height: 200px !important;
+  //max-height: 270px;
+//}
+
+.card_img_home {
+  min-height: 230px;
+  max-height: 230px;
+  width: 100%;
+  object-fit: fill;
+}
+
+
+
 //breakpoint tablet ----------------------------------------------------------------------------
 @media (min-width: $breakpoint-tablet) {
 
@@ -209,73 +251,79 @@ p.text-carousel {
     text-align: left;
   }
 
-//Reasons section Tablet
-.why-adopt-section {
-  padding: calc(42px + 3%) 15% 2% 15%;
-  background-color: $lightbrown-comfy; /* Light brown background */
-  width: 100%;
+  //Reasons section Tablet
+  .why-adopt-section {
+    padding: calc(42px + 3%) 15% 2% 15%;
+    background-color: $lightbrown-comfy; /* Light brown background */
+    width: 100%;
+  }
+
+  .why-adopt-title {
+    text-align: center;
+    color: white;
+    font-size: 4em; /* Large font size */
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
+
+  .why-adopt-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .why-adopt-mini-text {
+    font-size: 1.6em; /* Slightly larger font for emphasis */
+    color: white;
+    margin-top: 10px;
+    max-width: 50%;
+  }
+
+  .why-adopt-content {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .why-adopt-image {
+    max-width: 30%; /* Image size as per previous sections */
+    margin: 0 15vh;
+  }
+
+  .reasons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    max-width: 60%; /* Adjusted to give more space for text */
+  }
+
+  .reason {
+    font-size: 1.7em; /* Increased size for emphasis */
+    color: white;
+    margin-bottom: 20px; /* Slightly more space between reasons */
+    display: flex;
+    align-items: center;
+  }
+
+  .emoji-img {
+    max-width: 8vh;
+    margin-right: 5vh;
+  }
+
+  .emoji-img2 {
+    max-width: 8vh;
+    margin-left: 3vh;
+  }
+  .card-home {
+    min-height: 230px !important;
+    max-height: 250px;
+  }
+
 }
 
-.why-adopt-title {
-  text-align: center;
-  color: white;
-  font-size: 4em; /* Large font size */
-  margin-bottom: 10px;
-  font-weight: 500;
-}
 
-.why-adopt-text {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.why-adopt-mini-text {
-  font-size: 1.6em; /* Slightly larger font for emphasis */
-  color: white;
-  margin-top: 10px;
-  max-width: 50%;
-}
-
-.why-adopt-content {
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.why-adopt-image {
-  max-width: 30%; /* Image size as per previous sections */
-  margin: 0 15vh;
-}
-
-.reasons {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: left;
-  max-width: 60%; /* Adjusted to give more space for text */
-}
-
-.reason {
-  font-size: 1.7em; /* Increased size for emphasis */
-  color: white;
-  margin-bottom: 20px; /* Slightly more space between reasons */
-  display: flex;
-  align-items: center;
-}
-
-.emoji-img {
-  max-width: 8vh;
-  margin-right: 5vh;
-}
-
-.emoji-img2 {
-  max-width: 8vh;
-  margin-left: 3vh;
-}
-//Reasons section
-}
 
 //breakpoint desktop -------------------------------------------------------------------------------------
 

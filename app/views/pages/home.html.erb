@@ -1,90 +1,69 @@
 
 <div class="main">
-  <%# <div class="container banner-1">
 
-    <%= image_tag 'gato-roupa-xadrez.png', alt: 'Cat with plaid outfit' %>
+  <!-- SECTION: carousel -->
+  <div id="carouselAutoplaying" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselAutoplaying" data-bs-slide-to="0" class="active indicator-carousel" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselAutoplaying" data-bs-slide-to="1" aria-label="Slide 2" class="indicator-carousel"></button>
+      <button type="button" data-bs-target="#carouselAutoplaying" data-bs-slide-to="2" aria-label="Slide 3" class="indicator-carousel"></button>
+    </div>
 
+    <div class="carousel-inner">
 
-  <%# <div data-controller="carousel" data-carousel-interval-value="5000">
-    <div data-carousel-target="slide" class="container banner-1">
-      <h1>Your best friend awaits for you!</h1>
-      <p>Adopt you best company!</p>
-      <%= image_tag 'gato-roupa-xadrez.png', alt: 'Cat with plaid outfit' %>
-    <%# </div>
-    <div data-carousel-target="slide">Slide 2</div>
-    <div data-carousel-target="slide">Slide 3</div> %>
+      <div class="carousel-item active banner-1" data-bs-interval="100000">
+        <h1 class="title-carousel">Your best friend awaits you!</h1>
+        <div class="content-carousel">
+          <div class="text-button">
+            <p class="text-carousel">Adopt your best company!</p>
+            <button class="button-carosel pulse"><%= link_to "Adopt now!", animals_path %></button>
+          </div>
+          <img src="<%= asset_path 'gatohome.png' %>" class="d-block img-carousel img-banner-1" alt="...">
+        </div>
+      </div>
 
-    <%# <button data-action="carousel#prev" aria-label="Previous Slide">
-      <i class="fas fa-chevron-left"></i>
-    </button> %>
-    <%# <button data-action="carousel#next" aria-label="Next Slide">
-      <i class="fas fa-chevron-right"></i>
-    </button> %>
-  <%# </div> %>
+      <div class="carousel-item banner-2" data-bs-interval="100000">
+        <h1 class="title-carousel">Let's find him a home!</h1>
+        <div class="content-carousel">
+          <div  class="text-button">
+            <p class="text-carousel">Found a pet and can't keep him? We can help!</p>
+            <button class="button-carosel pulse"><%= link_to "Register pet", new_animal_path %></button>
+          </div>
+          <img src="<%= asset_path 'cachorro-blusa-amarela.png' %>" class="d-block img-carousel img-banner-2" alt="...">
+        </div>
+      </div>
 
-<!-- SECTION: carousel -->
-<div id="carouselAutoplaying" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-indicators">
-    <button type="button" data-bs-target="#carouselAutoplaying" data-bs-slide-to="0" class="active indicator-carousel" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#carouselAutoplaying" data-bs-slide-to="1" aria-label="Slide 2" class="indicator-carousel"></button>
-    <button type="button" data-bs-target="#carouselAutoplaying" data-bs-slide-to="2" aria-label="Slide 3" class="indicator-carousel"></button>
+      <div class="carousel-item banner-1" data-bs-interval="10000">
+        <h1 class="title-carousel">AAAAAAAAAAAAAAA</h1>
+        <div class="content-carousel">
+          <div  class="text-button">
+            <p class="text-carousel">BBBBBBBBBBBBBB</p>
+            <button class="button-carosel pulse"><%= link_to "Adote já!", animals_path %></button>
+          </div>
+          <img src="<%= asset_path 'gatohome.png' %>" class="d-block img-carousel" alt="...">
+        </div>
+      </div>
+
+    </div> <!-- Closing tag for carousel-inner -->
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselAutoplaying" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselAutoplaying" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
   </div>
 
-  <div class="carousel-inner">
-
-    <div class="carousel-item active banner-1" data-bs-interval="100000">
-      <h1 class="title-carousel">Your best friend awaits you!</h1>
-      <div class="content-carousel">
-        <div class="text-button">
-          <p class="text-carousel">Adopt your best company!</p>
-          <button class="button-carosel pulse"><%= link_to "Adopt now!", animals_path %></button>
-        </div>
-        <img src="<%= asset_path 'gatohome.png' %>" class="d-block img-carousel img-banner-1" alt="...">
+  <!-- NEXT SECTION: Why Adopt? -->
+  <div class="why-adopt-section"> <!-- Whole blue section -->
+    <div class="why-adopt-content">
+      <div class="why-adopt-text">
+        <h1 class="why-adopt-title">WHY ADOPT?</h1> <!-- Section title -->
+        <p class="why-adopt-mini-text">There are many animals in the streets, adopting can make a real difference!</p>
       </div>
-    </div>
-
-    <div class="carousel-item banner-2" data-bs-interval="100000">
-      <h1 class="title-carousel">Let's find him a home!</h1>
-      <div class="content-carousel">
-        <div  class="text-button">
-          <p class="text-carousel">Found a pet and can't keep him? We can help!</p>
-          <button class="button-carosel pulse"><%= link_to "Register pet", new_animal_path %></button>
-        </div>
-        <img src="<%= asset_path 'cachorro-blusa-amarela.png' %>" class="d-block img-carousel img-banner-2" alt="...">
-      </div>
-    </div>
-
-    <div class="carousel-item banner-1" data-bs-interval="10000">
-      <h1 class="title-carousel">AAAAAAAAAAAAAAA</h1>
-      <div class="content-carousel">
-        <div  class="text-button">
-          <p class="text-carousel">BBBBBBBBBBBBBB</p>
-          <button class="button-carosel pulse"><%= link_to "Adote já!", animals_path %></button>
-        </div>
-        <img src="<%= asset_path 'gatohome.png' %>" class="d-block img-carousel" alt="...">
-      </div>
-    </div>
-
-  </div> <!-- Closing tag for carousel-inner -->
-
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselAutoplaying" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselAutoplaying" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
-
-<!-- NEXT SECTION: Why Adopt? -->
-<div class="why-adopt-section"> <!-- Whole blue section -->
-  <div class="why-adopt-content">
-    <div class="why-adopt-text">
-      <h1 class="why-adopt-title">WHY ADOPT?</h1> <!-- Section title -->
-      <p class="why-adopt-mini-text">There are many animals in the streets, adopting can make a real difference!</p>
-    </div>
-    <img src="<%= asset_path 'dogreasons.png' %>" class="why-adopt-image" alt="Adopt a pet">
+      <img src="<%= asset_path 'dogreasons.png' %>" class="why-adopt-image" alt="Adopt a pet">
       <div class="reasons">
         <p class="reason">
           <img src="<%= asset_path('house.png') %>" alt="Paw" class="emoji-img">
@@ -99,8 +78,52 @@
           It's a fulfilling experience!
         </p>
       </div>
+    </div>
   </div>
-</div>
+
+  <div class="home-cards-section">
+    <h1 class="title-home-cards-section">Adopt a pet!</h1>
+    <p class="p-home-cards-section">They're waiting for you!</p>
+    <img src="<%= asset_path('pet-care.png') %>" alt="animals" class="emoji-img">
+    <div class="row div-home-cards">
+        <% if @animals.present? %>
+          <% @animals.limit(3).each do |animal| %>
+
+            <div class="col-sm-12 col-md-4 col-lg-4 mb-4">
+              <%= link_to animal_path(animal), class: "content_link text-decoration-none" do %>
+                <div class="card text-dark card-has-bg click-col card-home">
+                  <% if animal.photos.attached? %>
+                    <%= cl_image_tag(animal.photos.first.key, crop: "fill", gravity: "center", class: "card_img_home") %>
+                  <% else %>
+                    <div class="d-flex justify-content-center align-items-center" style="height: 450px;">
+                      <%= image_tag('paws-no-photo.jpg', style: "min-heigth: 360px;", class: "d-block") %>
+                    </div>
+                  <% end %>
+
+
+                  <div class="card-img-overlay d-flex flex-column justify-content-between">
+
+                    <div class="card-footer">
+
+                      <div class="media-body text-center">
+                        <h3 class="my-0 text-light d-block text-shadow"><%= animal.name %></h3>
+                        <medium class="text-light text-shadow"><%= animal.gender %></medium>
+                      </div>
+
+                      <%= link_to "Know More", animal_path(animal), class: 'know_more_button mt-2 text-center button pulse ' %>
+                    </div>
+
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
+        <% else %>
+          <h1>No animals available yet</h1>
+        <% end %>
+      </div>
+  </div>
+
 
 
 
