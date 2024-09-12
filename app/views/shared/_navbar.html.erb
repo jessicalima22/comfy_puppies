@@ -14,9 +14,12 @@
           <li class="nav-item active">
             <%= link_to "Home", root_path, class: "nav-link" %>
           </li>
-          <li class="nav-item">
-            <%= link_to "Messages", "#", class: "nav-link" %>
-          </li>
+          <% if user_signed_in? && @chatroom_animals.present? %>
+            <% animal = @chatroom_animals.first %>
+            <li class="nav-item">
+            <%= link_to "Messages", animal_chatrooms_path(animal_id: animal.id), class: "nav-link" %>
+            </li>
+          <% end %>
           <li class="nav-item">
             <%= link_to "About us", about_path, class: "nav-link" %>
           </li>

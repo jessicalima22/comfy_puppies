@@ -1,6 +1,8 @@
 class ApplicationController < ActionController::Base
   before_action :authenticate_user!
   before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :set_chatroom_animals
+
   def configure_permitted_parameters
     # For additional fields in app/views/devise/registrations/new.html.erb
     devise_parameter_sanitizer.permit(:sign_up, keys: [:avatar])
@@ -26,5 +28,14 @@ class ApplicationController < ActionController::Base
 
   def skip_pundit?
     devise_controller? || params[:controller] =~ /(^(rails_)?admin)|(^pages$)/
+  end
+
+  def set_chatroom_animals
+    if user_signed_in?
+      @chatroom_animal_ids = current_user.chatrooms.pluck(:animal_id)
+      @chatroom_animals = Animal.where(id: @chatroom_animal_ids)
+    else
+      @chatroom_animals = []
+    end
   end
 end
