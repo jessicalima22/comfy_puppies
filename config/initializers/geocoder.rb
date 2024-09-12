@@ -1,4 +1,5 @@
 Geocoder.configure(
+  http_headers: { "User-Agent" => "ComfyPuppiesOnline/1.0 (ldcastro23@gmail.com)" }
   # Geocoding options
   # timeout: 3,                 # geocoding service timeout (secs)
   # lookup: :nominatim,         # name of geocoding service (symbol)
