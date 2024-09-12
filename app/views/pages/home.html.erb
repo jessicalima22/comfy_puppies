@@ -26,7 +26,7 @@
         <h1 class="title-carousel">Let's find him a home!</h1>
         <div class="content-carousel">
           <div  class="text-button">
-            <p class="text-carousel">Found a pet and can't keep him? We can help!</p>
+            <p class="text-carousel p-text-banner-2">Found a pet and can't keep him? We can help!</p>
             <button class="button-carosel pulse"><%= link_to "Register pet", new_animal_path %></button>
           </div>
           <img src="<%= asset_path 'cachorro-blusa-amarela.png' %>" class="d-block img-carousel img-banner-2" alt="...">
@@ -81,7 +81,7 @@
     </div>
   </div>
 
-  <div class="home-cards-section">
+  <!-- <div class="home-cards-section">
     <h1 class="title-home-cards-section">Adopt a pet!</h1>
     <p class="p-home-cards-section">They're waiting for you!</p>
     <img src="<%= asset_path('pet-care.png') %>" alt="animals" class="emoji-img">
@@ -91,9 +91,9 @@
 
             <div class="col-sm-12 col-md-4 col-lg-4 mb-4">
               <%= link_to animal_path(animal), class: "content_link text-decoration-none" do %>
-                <div class="card text-dark card-has-bg click-col card-home">
+                <div class="card text-dark card-has-bg click-col">
                   <% if animal.photos.attached? %>
-                    <%= cl_image_tag(animal.photos.first.key, crop: "fill", gravity: "center", class: "card_img_home") %>
+                    <%= cl_image_tag(animal.photos.first.key, crop: "fill", gravity: "center", aspect_ratio: "3:4", class: "card_img_index") %>
                   <% else %>
                     <div class="d-flex justify-content-center align-items-center" style="height: 450px;">
                       <%= image_tag('paws-no-photo.jpg', style: "min-heigth: 360px;", class: "d-block") %>
@@ -122,7 +122,7 @@
           <h1>No animals available yet</h1>
         <% end %>
       </div>
-  </div>
+  </div> -->
 
 
 

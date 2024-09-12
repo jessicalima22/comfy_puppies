@@ -25,11 +25,16 @@
 }
 
 .img-banner-1 {
-  max-width: 30%;    width: 60%;
-    max-width: 315px;}
+  //max-width: 30%;
+  width: 60%;
+  max-width: 240px;
+}
 
 .img-banner-2 {
-  max-height: 229px; //altura do primeiro gato
+  width: 40%;
+  max-height: 250px;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
 }
 
 .title-carousel, .text-carousel{
@@ -68,6 +73,7 @@ p.text-carousel {
   min-height: 30%;
   font-size: 0,001rem;
   opacity: 0;
+  display: none;
 }
 
 .text-button {
@@ -181,10 +187,14 @@ p.text-carousel {
 //}
 
 .card_img_home {
-  min-height: 230px;
-  max-height: 230px;
+  min-height: 363px;
+  max-height: 516px;
   width: 100%;
   object-fit: fill;
+  // min-height: 230px;
+  // max-height: 230px;
+  // width: 100%;
+  // object-fit: fill;
 }
 
 
@@ -217,13 +227,19 @@ p.text-carousel {
   }
 
   .img-banner-1 {
+    margin-top: 0.5rem;
     width: 30%;
     max-width: 315px;
+  }
+
+  .img-banner-2 {
+    max-width: 163px;
   }
 
   h1.title-carousel {
     font-weight: 500;
     font-size: 2rem;
+    margin-bottom: 0;
   }
 
   p.text-carousel {
@@ -231,6 +247,11 @@ p.text-carousel {
     font-size: 1.2rem;
     min-height: 40%;
     opacity: 1;
+    display: block;
+  }
+
+  p.text-carousel.p-text-banner-2 {
+    padding-top: 0;
   }
 
   .banner-1,.banner-2 {
@@ -238,11 +259,9 @@ p.text-carousel {
   }
 
   .text-button {
-
     display: flex;
     flex-direction: column;
     align-items: normal;
-
   }
 
   h1.title-carousel {
@@ -288,7 +307,7 @@ p.text-carousel {
 
   .why-adopt-image {
     max-width: 30%; /* Image size as per previous sections */
-    margin: 0 15vh;
+    margin: 0 5vh;
   }
 
   .reasons {
@@ -342,7 +361,6 @@ p.text-carousel {
     margin-bottom: 1.2rem;
   }
 
-
   h1.title-carousel {
     font-weight: 500;
     font-size: 3rem;
@@ -350,5 +368,9 @@ p.text-carousel {
 
   p.text-carousel {
     font-size: 1.8rem;
+  }
+
+  .img-banner-2 {
+    max-width: 220px;
   }
 }
