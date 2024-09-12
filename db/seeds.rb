@@ -41,7 +41,7 @@ Animal.create!(
   castrated: true,
   vaccinated: true,
   dewormed: true,
-  special_needed: false,
+  special_needed: "no",
   location: "New York",
   photos: [
     ActiveStorage::Blob.create_and_upload!(
@@ -69,7 +69,7 @@ Animal.create!(
   castrated: false,
   vaccinated: true,
   dewormed: true,
-  special_needed: true,
+  special_needed: "yes, miss one leg",
   location: "Los Angeles",
   photos: [
     ActiveStorage::Blob.create_and_upload!(
@@ -102,7 +102,7 @@ Animal.create!(
   castrated: true,
   vaccinated: true,
   dewormed: true,
-  special_needed: false,
+  special_needed: "no",
   location: "Chicago",
   photos: [
     ActiveStorage::Blob.create_and_upload!(
@@ -125,7 +125,7 @@ Animal.create!(
   castrated: true,
   vaccinated: true,
   dewormed: true,
-  special_needed: true,
+  special_needed: "yes, requires joint supplements due to mild arthritis.",
   location: "San Francisco",
   photos: [
     ActiveStorage::Blob.create_and_upload!(
@@ -153,7 +153,7 @@ Animal.create!(
   castrated: true,
   vaccinated: true,
   dewormed: true,
-  special_needed: false,
+  special_needed: "no",
   location: "Houston",
   photos: [
     ActiveStorage::Blob.create_and_upload!(
@@ -186,7 +186,7 @@ Animal.create!(
   castrated: true,
   vaccinated: true,
   dewormed: true,
-  special_needed: false,
+  special_needed: "no",
   location: "Phoenix",
   photos: [
     ActiveStorage::Blob.create_and_upload!(
@@ -224,7 +224,7 @@ Animal.create!(
   castrated: true,
   vaccinated: true,
   dewormed: true,
-  special_needed: false,
+  special_needed: "no",
   location: "Philadelphia",
   photos: [
     ActiveStorage::Blob.create_and_upload!(
@@ -247,7 +247,7 @@ Animal.create!(
   castrated: true,
   vaccinated: true,
   dewormed: true,
-  special_needed: true,
+  special_needed: "yes, needs a strict diet for managing food allergies.",
   location: "Dallas",
   photos: [
     ActiveStorage::Blob.create_and_upload!(
@@ -280,7 +280,7 @@ Animal.create!(
   castrated: true,
   vaccinated: true,
   dewormed: true,
-  special_needed: false,
+  special_needed: "no",
   location: "Boston",
   photos: [
     ActiveStorage::Blob.create_and_upload!(
@@ -308,7 +308,7 @@ Animal.create!(
   castrated: false,
   vaccinated: false,
   dewormed: false,
-  special_needed: false,
+  special_needed: "no",
   location: "San Francisco",
   photos: [
     ActiveStorage::Blob.create_and_upload!(
@@ -336,7 +336,7 @@ Animal.create!(
   castrated: false,
   vaccinated: false,
   dewormed: false,
-  special_needed: false,
+  special_needed: "no",
   location: "Seattle",
   photos: [
     ActiveStorage::Blob.create_and_upload!(
@@ -359,7 +359,7 @@ Animal.create!(
   castrated: true,
   vaccinated: true,
   dewormed: true,
-  special_needed: "requires insulin shots for diabetes",
+  special_needed: "yes, requires insulin shots for diabetes",
   location: "Chicago",
   photos: [
     ActiveStorage::Blob.create_and_upload!(
@@ -387,7 +387,7 @@ Animal.create!(
   castrated: true,
   vaccinated: true,
   dewormed: true,
-  special_needed: false,
+  special_needed: "no",
   location: "Portland",
   photos: [
     ActiveStorage::Blob.create_and_upload!(
@@ -420,7 +420,7 @@ Animal.create!(
   castrated: true,
   vaccinated: true,
   dewormed: true,
-  special_needed: "needs kidney care diet",
+  special_needed: "yes, needs kidney care diet",
   location: "Denver",
   photos: [
     ActiveStorage::Blob.create_and_upload!(
@@ -448,16 +448,16 @@ Animal.create!(
   castrated: false,
   vaccinated: true,
   dewormed: true,
-  special_needed: false,
+  special_needed: "no",
   location: "San Diego",
   photos: [
     ActiveStorage::Blob.create_and_upload!(
-      io: URI.open("https://example.com/photo19.jpg"),
+      io: URI.open("https://res.cloudinary.com/dsoletyk5/image/upload/v1726155264/ja-san-miguel-_-QQuvAwQ-0-unsplash_ig3txo.jpg"),
       filename: "molly_photo1.jpg",
       content_type: 'image/jpeg'
     ),
     ActiveStorage::Blob.create_and_upload!(
-      io: URI.open("https://example.com/photo20.jpg"),
+      io: URI.open("https://res.cloudinary.com/dsoletyk5/image/upload/v1726155321/krzysztof-niewolny-E6XzXPWb0PM-unsplash_cxbauj.jpg"),
       filename: "molly_photo2.jpg",
       content_type: 'image/jpeg'
     )
@@ -476,16 +476,16 @@ Animal.create!(
   castrated: true,
   vaccinated: true,
   dewormed: true,
-  special_needed: false,
+  special_needed: "no",
   location: "Austin",
   photos: [
     ActiveStorage::Blob.create_and_upload!(
-      io: URI.open("https://example.com/photo21.jpg"),
+      io: URI.open("https://res.cloudinary.com/dsoletyk5/image/upload/v1726155406/chris-mcintosh-1ramyMuTLBc-unsplash_stb52n.jpg"),
       filename: "zeus_photo1.jpg",
       content_type: 'image/jpeg'
     ),
     ActiveStorage::Blob.create_and_upload!(
-      io: URI.open("https://example.com/photo22.jpg"),
+      io: URI.open("https://res.cloudinary.com/dsoletyk5/image/upload/v1726155406/chris-mcintosh-_Hv0zUhUsDg-unsplash_pomlhf.jpg"),
       filename: "zeus_photo2.jpg",
       content_type: 'image/jpeg'
     )
@@ -504,16 +504,16 @@ Animal.create!(
   castrated: true,
   vaccinated: true,
   dewormed: true,
-  special_needed: false,
+  special_needed: "no",
   location: "Seattle",
   photos: [
     ActiveStorage::Blob.create_and_upload!(
-      io: URI.open("https://example.com/photo23.jpg"),
+      io: URI.open("https://res.cloudinary.com/dsoletyk5/image/upload/v1726155536/max-bvp-wdDYSvwSneE-unsplash_lb9jce.jpg"),
       filename: "roxy_photo1.jpg",
       content_type: 'image/jpeg'
     ),
     ActiveStorage::Blob.create_and_upload!(
-      io: URI.open("https://example.com/photo24.jpg"),
+      io: URI.open("https://res.cloudinary.com/dsoletyk5/image/upload/v1726155537/max-bvp-XCcmFXDSzdY-unsplash_e2nkh5.jpg"),
       filename: "roxy_photo2.jpg",
       content_type: 'image/jpeg'
     )
@@ -532,16 +532,16 @@ Animal.create!(
   castrated: true,
   vaccinated: true,
   dewormed: true,
-  special_needed: false,
+  special_needed: "no",
   location: "Denver",
   photos: [
     ActiveStorage::Blob.create_and_upload!(
-      io: URI.open("https://example.com/photo25.jpg"),
+      io: URI.open("https://res.cloudinary.com/dsoletyk5/image/upload/v1726155643/rafaella-waasdorp-HCcJJkvbIK4-unsplash_zelkoc.jpg"),
       filename: "buster_photo1.jpg",
       content_type: 'image/jpeg'
     ),
     ActiveStorage::Blob.create_and_upload!(
-      io: URI.open("https://example.com/photo26.jpg"),
+      io: URI.open("https://res.cloudinary.com/dsoletyk5/image/upload/v1726155644/rafaella-waasdorp-tJgi9elrKOY-unsplash_sursaw.jpg"),
       filename: "buster_photo2.jpg",
       content_type: 'image/jpeg'
     )
@@ -560,16 +560,16 @@ Animal.create!(
   castrated: false,
   vaccinated: true,
   dewormed: true,
-  special_needed: false,
+  special_needed: "no",
   location: "Portland",
   photos: [
     ActiveStorage::Blob.create_and_upload!(
-      io: URI.open("https://example.com/photo27.jpg"),
+      io: URI.open("https://res.cloudinary.com/dsoletyk5/image/upload/v1726155797/karsten-winegeart-4OprnvM9UQs-unsplash_djnunu.jpg"),
       filename: "maggie_photo1.jpg",
       content_type: 'image/jpeg'
     ),
     ActiveStorage::Blob.create_and_upload!(
-      io: URI.open("https://example.com/photo28.jpg"),
+      io: URI.open("https://res.cloudinary.com/dsoletyk5/image/upload/v1726155788/karsten-winegeart-uyovIw3w2O8-unsplash_cb39lk.jpg"),
       filename: "maggie_photo2.jpg",
       content_type: 'image/jpeg'
     )
@@ -588,16 +588,16 @@ Animal.create!(
   castrated: true,
   vaccinated: true,
   dewormed: true,
-  special_needed: true,
+  special_needed: "yes, prone to seizures, requires daily medication.",
   location: "Miami",
   photos: [
     ActiveStorage::Blob.create_and_upload!(
-      io: URI.open("https://example.com/photo29.jpg"),
+      io: URI.open("https://res.cloudinary.com/dsoletyk5/image/upload/v1726155912/marek-szturc--zGoju8fyg8-unsplash_e3vugq.jpg"),
       filename: "shadow_photo1.jpg",
       content_type: 'image/jpeg'
     ),
     ActiveStorage::Blob.create_and_upload!(
-      io: URI.open("https://example.com/photo30.jpg"),
+      io: URI.open("https://res.cloudinary.com/dsoletyk5/image/upload/v1726155913/marek-szturc-NBCQAHOnDSs-unsplash_gj37ou.jpg"),
       filename: "shadow_photo2.jpg",
       content_type: 'image/jpeg'
     )
@@ -616,16 +616,16 @@ Animal.create!(
   castrated: true,
   vaccinated: true,
   dewormed: true,
-  special_needed: false,
+  special_needed: "no",
   location: "San Antonio",
   photos: [
     ActiveStorage::Blob.create_and_upload!(
-      io: URI.open("https://example.com/photo15.jpg"),
+      io: URI.open("https://res.cloudinary.com/dsoletyk5/image/upload/v1726156010/karsten-winegeart-lQ8WvR54MOU-unsplash_lfvhgg.jpg"),
       filename: "luna_photo1.jpg",
       content_type: 'image/jpeg'
     ),
     ActiveStorage::Blob.create_and_upload!(
-      io: URI.open("https://example.com/photo16.jpg"),
+      io: URI.open("https://res.cloudinary.com/dsoletyk5/image/upload/v1726156012/karsten-winegeart-Qb7D1xw28Co-unsplash_el7x0z.jpg"),
       filename: "luna_photo2.jpg",
       content_type: 'image/jpeg'
     )
