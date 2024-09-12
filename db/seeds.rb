@@ -190,7 +190,7 @@ Animal.create!(
   location: "Phoenix",
   photos: [
     ActiveStorage::Blob.create_and_upload!(
-      io: URI.open("https://res.cloudinary.com/dsoletyk5/image/upload/v1725717686/janosch-diggelmann-9RMOwSY4jFw-unsplash_wwvhsk.jpg"),
+      io: URI.open("https://res.cloudinary.com/datqpbimu/image/upload/c_crop,w_2250,h_4000,ar_9:16,g_auto/v1726171729/daisy_1_le9vbk.jpg"),
       filename: "daisy_photo1.jpg",
       content_type: 'image/jpeg'
     ),
@@ -388,7 +388,7 @@ Animal.create!(
   vaccinated: true,
   dewormed: true,
   special_needed: "no",
-  location: "Portland",
+  location: "Portland,",
   photos: [
     ActiveStorage::Blob.create_and_upload!(
       io: URI.open("https://res.cloudinary.com/dsoletyk5/image/upload/v1725717703/vlad-ion-XdrO9mK-8Bo-unsplash_yph4mj.jpg"),
