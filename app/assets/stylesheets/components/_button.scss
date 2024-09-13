@@ -1,12 +1,11 @@
 @import "breakpoints";
 
 .button {
-  background-color: #72190D;
+  background-color: $brown-comfy;
   color: white;
   text-decoration: none; /* Removes underline */
   width: 50vh;
   height: 8vh;
-  font-family: $headers-font;
   font-size: 1rem;
   font-weight: 700;
   border: none;
@@ -16,7 +15,7 @@
 }
 
 .button-carosel {
-  background-color: #72190D;
+  background-color: $brown-comfy;
   color: white;
   text-decoration: none; /* Removes underline */
   width: 20vh;
@@ -31,7 +30,7 @@
 }
 
 .btn-login {
-  background-color: #72190D;
+  background-color: $brown-comfy;
   color: white;
   text-decoration: none; /* Removes underline */
   width: 100%; /* Make the button take the full width of its container */
@@ -48,7 +47,7 @@
 }
 
 .know_more_button {
-  background-color: #72190D;
+  background-color: $brown-comfy;
   color: white;
   text-decoration: none;
   width: 50%;
@@ -83,7 +82,7 @@
   animation: pulse 0.6s ease-in-out infinite;
   transform: translateY(-5px);
   box-shadow: 0 0 15px #ff634780;
-  background-color: #65190f;
+  background-color: $brown-comfy;
   color: white;
 }
 
@@ -182,7 +181,7 @@
   }
 
   .button-carosel {
-    background-color: #72190D;
+    background-color: $brown-comfy;
     color: white;
     text-decoration: none; /* Removes underline */
     width: 30vh;
@@ -199,5 +198,51 @@
   .back {
     width: auto;
     height: 36px;
+  }
+
+    /* Back button styling */
+  .back-button {
+    text-align: center;
+    margin-top: 2rem;
+  }
+
+  .btn-back {
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    background-color: $brown-comfy;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+  }
+
+  .send-message {
+    background-color: $brown-comfy;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    font-size: 1rem;
+    height: 35px;
+  }
+
+  .send-message:hover {
+    background-color: #6b1d01;
+  }
+
+  /* Back Button */
+  .back-button {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .btn-back {
+    padding: 10px 20px;
+    background-color: #851204;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1.2rem;
   }
 }

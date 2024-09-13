@@ -1,8 +1,11 @@
 <div class="container">
   <%= simple_form_for [@animal, @chatroom] do |f| %>
-    <%= f.input :name, label: "Chatroom Name" %>
+    <div class="form-group">
+      <%= f.input :name, label: "Give your chat a name. (Maybe the pet's name!)", placeholder: "E.g: Lassie's Adoption" %>
+    </div>
 
-    <%= f.submit class: 'btn btn-secondary' %>  |
-    <%= link_to 'Back', animal_chatrooms_path(@animal), class: 'btn btn-secondary' %>
+    <div class="form-actions d-flex justify-content-center">
+      <%= f.submit 'Create Chatroom', class: 'button button-carosel' %>
+    </div>
   <% end %>
 </div>

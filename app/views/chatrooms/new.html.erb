@@ -1,4 +1,11 @@
-<div class="container padding_navbar">
-  <h1>Chatroom</h1>
-  <%= render 'form' %>
+<div class="padding_navbar chatroom-create-page">
+  <div class="chat-content white-box">
+    <h1 class="h1-chatrooms">Create New Chatroom</h1>
+    <%= render 'form' %>
+
+    <!-- Back Button -->
+    <div class="back-button">
+      <%= link_to 'Back', animal_chatrooms_path(@animal), class: 'button btn-back' %>
+    </div>
+  </div>
 </div>

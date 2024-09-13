@@ -3,27 +3,30 @@
   data-chatroom-chatroom-id-value="<%= @chatroom.id %>"
   data-chatroom-current-user-id-value="<%= current_user.id %>">
 
-  <h1># <%= @chatroom.name %></h1>
-  <p># <%= @chatroom.animal.id %></p>
+  <!-- Chatroom Title -->
+  <h1 class="chatroom-title"># <%= @chatroom.name %></h1>
 
-  <div id="messages" data-chatroom-target="messages">
+  <!-- Messages Container -->
+  <div id="messages" data-chatroom-target="messages" class="messages-container">
     <% @chatroom.messages.each do |message| %>
       <div class="message-row d-flex <%= message.sender?(current_user) ? 'justify-content-end' : 'justify-content-start' %>">
-        <div class="<%= message.sender?(current_user) ? 'sender-style' : 'receiver-style' %>">
+        <div class="<%= message.sender?(current_user) ? 'sender-style' : 'receiver-style' %> message-content">
           <%= render "messages/message", message: message %>
         </div>
-      </div></div>
+      </div>
     <% end %>
   </div>
 
+  <!-- Message Form -->
   <%= simple_form_for :message, url: "/animals/#{@animal.id}/chatrooms/#{@chatroom.id}/messages",
-    html: {data: { action: "turbo:submit-end->chatroom#resetForm" }, class: "d-flex"} do |f|
-    %>
-    <%= f.input :content,
-      label: false,
-      placeholder: "Message ##{@chatroom.name}",
-      wrapper_html: {class: "flex-grow-1"}
-    %>
-    <%= f.submit "Send", class: "btn btn-primary mb-3" %>
+    html: {data: { action: "turbo:submit-end->chatroom#resetForm" }, class: "message-form d-flex"} do |f| %>
+    <%= f.input :content, label: false, placeholder: "Message here", wrapper_html: {class: "flex-grow-1 message-input"} %>
+    <%= f.submit "Send", class: "btn button mb-3 send-message" %>
   <% end %>
+
+    <!-- Back button -->
+  <div class="text-center mt-4 d-flex flex-column align-items-center">
+    <a href="#" class="btn button pulse know_more_button mb-3 back">Back</a>
+  </div>
+
 </div>
