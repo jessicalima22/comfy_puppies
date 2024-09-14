@@ -17,7 +17,9 @@
 
 
       <div class="collapse filter-overlay position-absolute" id="filterForm">
+
         <div class="div-filter card card-body">
+          <h1>Find animals by:</h1>
           <%= form_with url: animals_path, method: :get, local: true, scope: :animal, class: "row" do |form| %>
             <div class="col-xs-12 col-sm-6 col-md-12 div-form-input-index">
               <%= form.label :name %>
