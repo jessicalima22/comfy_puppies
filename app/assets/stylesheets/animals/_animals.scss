@@ -1,13 +1,18 @@
-.card-category {
+.show-index-main {
   background-color: $azul-comfy;
+  color: white;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  padding-bottom: 1rem;
+}
+
+.card-category {
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
   align-items: center;
   color: white;
-  font-weight: bold;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   //box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
@@ -19,8 +24,9 @@
   font-size: 1rem;
 }
 
-.fiter-and-cards-index {
-  max-width: 100%;
+.filter-and-cards-index {
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .div-form-input-index {
@@ -52,6 +58,45 @@
   align-items: center;
 }
 
+.filter-index {
+  min-width: 300px;
+  margin: 1rem;
+}
+
+.div-filter {
+  background-color: $amarelo-comfy;
+  width: 100%;
+  max-width: 400px !important;
+}
+
+.filter-overlay {
+  z-index: 1050;
+  top: 1;
+  left: 1;
+  //width: fit-content;
+  overflow-y: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  margin-top: 2.2rem;
+   /* Um leve sombreamento para o menu */
+}
+
+.div-icon-filter {
+  background-color: $lightbrown-comfy;
+  border: none;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  border-radius: 10px;
+}
+
+.icon-filter {
+  background-image: url("adjust.png");
+  background-size: cover;
+  width: 35px;
+  height: 35px;
+  margin: 0.3rem;
+}
+
+
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
   .cards {
@@ -74,6 +119,7 @@
   border-radius: 20px;
   min-height: 350px;
   min-width: 200px;
+  max-width: 500px;
   box-shadow: 0 0 12px 0 rgba(0,0,0,0.2);
 
   @media (max-width: 768px) {
