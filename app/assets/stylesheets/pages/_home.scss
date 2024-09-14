@@ -178,7 +178,9 @@ p.text-carousel {
 }
 
 .div-home-cards {
-  padding: 3rem 2rem;
+  justify-content: space-around;
+  padding: 3rem 0;
+  max-width: 100%;
 }
 
 //.card-home {
@@ -340,7 +342,6 @@ p.text-carousel {
   }
   .card-home {
     min-height: 230px !important;
-    max-height: 250px;
   }
 
 }
