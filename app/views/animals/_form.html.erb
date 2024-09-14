@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container-new-edit d-flex flex-column align-items-center">
 
 
 
@@ -14,25 +14,81 @@
   </div>
 <% end %>
 
-
-    <%= f.input :name, label: "Name" %>
-    <%= f.input :breed, label: "Breed" %>
-    <%= f.input :size, label: "Size", collection: ["Small", "Medium", "Large"], prompt: "Select the size" %>
-    <%= f.input :gender, label: "Gender", collection: ["Male", "Female"], prompt: "Select the gender" %>
-    <%= f.input :age, label: "Age", as: :integer, input_html: { min: 0, step: 1 }, hint: "Age in years" %>
-    <%= f.input :location, label: "Location" %>
-
-    <div class="input-group">
-      <%= f.input :castrated, label: "Castrated", as: :boolean %>
-      <%= f.input :vaccinated, label: "Vaccinated", as: :boolean %>
-      <%= f.input :dewormed, label: "Dewormed", as: :boolean %>
+    <div class="div-input-new-edit-form ">
+      <%= f.input :name,
+        input_html: { class: 'input-new-edit-form' },
+        label: "Name",
+        label_html: { class: 'label-new-edit-form' } %>
     </div>
-    <%= f.input :special_needed, label: "Special Needs", hint: "Describe any special need" %>
+
+    <div class="div-input-new-edit-form">
+      <%= f.input :breed,
+        input_html: { class: 'input-new-edit-form' },
+        label: "Breed",
+        label_html: { class: 'label-new-edit-form' } %>
+    </div>
+
+    <div class="div-input-new-edit-form">
+      <%= f.input :size,
+        input_html: { class: 'input-new-edit-form' },
+        label: "Size", collection: ["Small", "Medium", "Large"],
+        label_html: { class: 'label-new-edit-form' },
+        prompt: "Select the size" %>
+    </div>
+
+    <div class="div-input-new-edit-form">
+      <%= f.input :gender,
+        input_html: { class: 'input-new-edit-form' },
+        label: "Gender",
+        label_html: { class: 'label-new-edit-form' },
+        collection: ["Male", "Female"], prompt: "Select the gender" %>
+    </div>
+
+    <div class="div-input-new-edit-form">
+      <%= f.input :age,
+        input_html: { class: 'input-new-edit-form' },
+        label: "Age",
+        label_html: { class: 'label-new-edit-form' },
+        as: :integer, input_html: { min: 0, step: 1 }, hint: "Age in years" %>
+    </div>
+
+    <div class="div-input-new-edit-form">
+      <%= f.input :location,
+        input_html: { class: 'input-new-edit-form' },
+        label: "Location",
+        label_html: { class: 'label-new-edit-form' } %>
+    </div>
+
+    <div class="form-group d-flex flex-row justify-content-around">
+      <%= f.input :castrated,
+      input_html: { class: 'input-new-edit-form' },
+      label: "Castrated", label_html: { class: 'label-new-edit-form' },
+      as: :boolean %>
+      <%= f.input :vaccinated,
+      input_html: { class: 'input-new-edit-form' },
+      label: "Vaccinated",
+      label_html: { class: 'label-new-edit-form' },
+      as: :boolean %>
+      <%= f.input :dewormed,
+      input_html: { class: 'input-new-edit-form' },
+      label: "Dewormed", label_html: { class: 'label-new-edit-form' },
+      as: :boolean %>
+    </div>
+
+    <div class="div-input-new-edit-form">
+      <%= f.input :special_needed,
+      input_html: { class: 'input-new-edit-form' },
+      label: "Special Needs",
+      label_html: { class: 'label-new-edit-form' },
+      hint: "Describe any special need" %>
+    </div>
+
     <div class="form-group">
-      <%= f.label :photos, "Photos" %>
-      <%= f.file_field :photos, multiple: true, direct_upload: true, class: 'form-control' %>
+      <%= f.label :photos, "Photos", class: 'label-new-edit-form' %>
+      <%= f.file_field :photos, id: 'file-upload', multiple: true, direct_upload: true, class: 'input-new-edit-form' %>
     </div>
-    <%= f.submit "Add new Animal", class: 'btn btn-primary' %>
+
+    <%= f.submit "Add new animal", class: 'button know_more_button mx-auto' %>
   <% end %>
-  <%= link_to 'Back', animals_path, class: 'btn btn-secondary' %>
+  <%= link_to 'Back', animals_path, class: 'btn button pulse know_more_button mb-3 mt-1' %>
 </div>
