@@ -1,10 +1,18 @@
 <div class="padding_navbar index-chatroom">
-  <h1 class="h1-chatrooms">My chats</h1>
-  <ul class="chatrooms-list">
-    <% @chatrooms.each do |chatroom| %>
-      <li class="custom-list-chat"><%= link_to chatroom.name, animal_chatroom_path(@animal, chatroom) %></li>
-    <% end %>
-  </ul>
-
-  <!-- <%= link_to 'New Chatroom', new_animal_chatroom_path(@animal), class: "btn btn-secondary" %> -->
+  <div class="container chat-content white-box">
+    <h1 class="h1-chatrooms">My Chats</h1>
+    <div class="container chat-list">
+      <ul class="chatrooms-list">
+        <% @chatrooms.each do |chatroom| %>
+          <li class="custom-list-chat">
+            <%= link_to chatroom.name, animal_chatroom_path(@animal, chatroom), class: "chatroom-link" %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+    <!-- Back Button -->
+    <div class="back-button">
+      <%= link_to 'Back', animals_path, class: "btn-back" %>
+    </div>
+  </div>
 </div>
