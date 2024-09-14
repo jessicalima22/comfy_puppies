@@ -13,6 +13,7 @@ class AnimalsController < ApplicationController
     @animals = @animals.where("special_needed ILIKE ?", "%#{params[:animal][:special_needed]}%") if params[:animal][:special_needed].present?
     @animals = @animals.where("location ILIKE ?", "%#{params[:animal][:location]}%") if params[:animal][:location].present?
     end
+    @animals = @animals.order(created_at: :asc)
     @animal = Animal.new
   end
 
