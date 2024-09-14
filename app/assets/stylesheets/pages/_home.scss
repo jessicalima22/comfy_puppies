@@ -153,8 +153,7 @@ p.text-carousel {
 }
 //Reasons section Mobile
 
-//last session
-
+//last section
 .home-cards-section {
   background-color:  $azul-comfy;
   display: flex;
@@ -182,11 +181,6 @@ p.text-carousel {
   padding: 3rem 0;
   max-width: 100%;
 }
-
-//.card-home {
-  //min-height: 200px !important;
-  //max-height: 270px;
-//}
 
 .card_img_home {
   min-height: 363px;
@@ -377,4 +371,49 @@ p.text-carousel {
   .img-banner-2 {
     max-width: 220px;
   }
+}
+
+
+//Footer section
+.footer {
+  background-color: $lightbrown-comfy;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.footer-message {
+  font-size: 1.2rem;
+  color: $brown-comfy;
+}
+
+.social-icons {
+  margin: 10px 0;
+}
+
+.social-icons a {
+  margin: 0 10px;
+}
+
+.social-icons img.icon {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s ease;
+}
+
+.social-icons img.icon:hover {
+  transform: scale(1.2);
+}
+
+.footer-credits {
+  font-size: 0.8rem;
+  color: $beige-comfy;
+}
+
+.footer-credits a {
+  color: $brown-comfy;
+  text-decoration: none;
+}
+
+.footer-credits a:hover {
+  text-decoration: underline;
 }

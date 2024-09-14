@@ -18,7 +18,7 @@ Geocoder.configure(
   # always_raise: [],
 
   # Calculation options
-  units: :km                 # :km for kilometers or :mi for miles
+  units: :km,                 # :km for kilometers or :mi for miles
   # distances: :linear          # :spherical or :linear
 
   # Cache configuration
@@ -26,4 +26,5 @@ Geocoder.configure(
   #   expiration: 2.days,
   #   prefix: 'geocoder:'
   # }
+  http_headers: { 'User-Agent' => 'ComfyPuppiesOnline/1.0 (ldcastro23@gmail.com)' }
 )

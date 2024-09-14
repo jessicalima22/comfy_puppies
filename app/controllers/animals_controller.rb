@@ -2,15 +2,17 @@ class AnimalsController < ApplicationController
   before_action :set_animal, only: [:show, :edit, :update, :destroy]
   def index
     @animals = policy_scope(Animal)
-    @animals =  @animals.where("breed ILIKE ?", "%#{params[:breed]}%") if params[:breed].present?
-    @animals = @animals.where(size: params[:size]) if params[:size].present?
-    @animals = @animals.where(gender: params[:gender]) if params[:gender].present?
-    @animals = @animals.where(age: params[:age]) if params[:age].present?
-    @animals = @animals.where(castrated: params[:castrated]) if params[:castrated].present?
-    @animals = @animals.where(vaccinated: params[:vaccinated]) if params[:vaccinated].present?
-    @animals = @animals.where(dewormed: params[:dewormed]) if params[:dewormed].present?
-    @animals = @animals.where("special_needed ILIKE ?", "%#{params[:special_needed]}%") if params[:special_needed].present?
-    @animals = @animals.where("location ILIKE ?", "%#{params[:location]}%") if params[:location].present?
+    if params[:animal].present?
+    @animals = @animals.where("breed ILIKE ?", "%#{params[:animal][:breed]}%") if params[:animal][:breed].present?
+    @animals = @animals.where(size: params[:animal][:size]) if params[:animal][:size].present?
+    @animals = @animals.where(gender: params[:animal][:gender]) if params[:animal][:gender].present?
+    @animals = @animals.where(age: params[:animal][:age]) if params[:animal][:age].present?
+    @animals = @animals.where(castrated: params[:animal][:castrated]) if params[:animal][:castrated].present?
+    @animals = @animals.where(vaccinated: params[:animal][:vaccinated]) if params[:animal][:vaccinated].present?
+    @animals = @animals.where(dewormed: params[:animal][:dewormed]) if params[:animal][:dewormed].present?
+    @animals = @animals.where("special_needed ILIKE ?", "%#{params[:animal][:special_needed]}%") if params[:animal][:special_needed].present?
+    @animals = @animals.where("location ILIKE ?", "%#{params[:animal][:location]}%") if params[:animal][:location].present?
+    end
     @animal = Animal.new
   end
 
